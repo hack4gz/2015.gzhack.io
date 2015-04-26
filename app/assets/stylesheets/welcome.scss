@@ -1,0 +1,162 @@
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+header{
+  height: 80px;
+  background: #ededeb;
+  .logo{
+    float: left;
+    margin-left: 80px;
+    a{
+      font-weight: 600;
+      color: #3f3f3f;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 32px 0;
+      display: block;
+    }
+  }
+  nav{
+    margin-right: 48px;
+    ul{
+      float: right;
+      li{
+        list-style: none;
+        float: left;
+        padding: 32px;
+        a{
+          color: #3f3f3f;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.introduction-banner{
+  background: url("/assets/intro-banner-bg.png") no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 620px;
+  .slogan{
+    position: absolute;
+    width: 100%;
+    height: 144px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -72px;
+    text-align: center;
+    color: #ededeb;
+    h1{
+      font-size: 48px;
+      margin-bottom: 0.5em;
+    }
+    p{
+      font-size: 24px;
+    }
+  }
+}
+
+.who-we-are{
+  position: relative;
+  
+  .column-title{
+    position: relative;
+    height: 346px;
+    .abstract{
+      position: absolute;
+      width: 100%;
+      height: 132px;
+      left: 50%;
+      top: 50%;
+      margin-left: -50%;
+      margin-top: -66px;
+      text-align: center;
+      h2{
+        font-size: 36px;
+        margin-bottom: 48px;
+        color: #595959;
+      }
+      p{
+        font-size: 24px;
+        color: #b0afaf;
+      }
+    }
+  }
+  .column-content{
+    background: url("/assets/who-we-are-bg.png") no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 620px;
+  }
+}
+
+.open-source{
+  background: #f4f8f9;
+  .column-title{
+    text-align: center;
+    padding: 90px 0;
+    h2{
+      font-size: 36px;
+      color: #949494;
+    }
+  }
+  .open-source-content{
+    .open-source-project-progress{
+      margin: 0 8%;
+      .project-item{
+        width: 22%;
+        margin-right: 4%;
+        text-align: center;
+        float: left;
+        background: #fff;
+        border-radius: 5px;
+        min-height: 256px;
+        &:last-child{
+          margin-right: 0;
+        }
+        h6{
+          color: #9f9f9f;
+          margin: 62px 0 52px;
+        }
+        h3{
+          color: #3f3f3f;
+          font-size: 24px;
+        }
+      }
+    }
+    .show-all-project{
+      padding: 100px 0;
+      text-align: center;
+      .show-all-project-btn{
+        width: 260px;
+        height: 80px;
+        line-height: 80px;
+        color: #949494;
+        border: 3px solid #a2a3a5;
+        border-radius: 5px;
+        background: #fff;
+        font-size: 24px;
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+      }
+    }
+  } 
+}
+
+.partners{
+  .column-title{
+    margin: 86px 0 56px;
+    h2{
+      text-align: center;
+      color: #949494;
+      font-size: 36px;
+    }
+  }
+  .partners-logo{
+    text-align: center;
+    margin-bottom: 118px;
+  }
+}
