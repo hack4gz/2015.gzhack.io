@@ -23,7 +23,7 @@ set :log_level, :info
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml db/production.sqlite3}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{tmp/pids}
@@ -38,7 +38,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:web), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
     end
@@ -52,6 +52,12 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+    end
+  end
+
+  after :log_revision, :open_site do
+    run_locally do
+      `open http://www.gzhack.io`
     end
   end
 
