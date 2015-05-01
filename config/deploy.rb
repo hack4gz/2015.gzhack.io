@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:gzhack/gzhack-site.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/var/www/gzhack-site"
+set :deploy_to, "~/gzhack-site"
 
 # Default value for :scm is :git
 # set :scm, :git
