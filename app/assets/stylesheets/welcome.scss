@@ -85,7 +85,7 @@ header{
     }
   }
   .column-content{
-    background: image-url("who-we-are-bg.png") no-repeat;
+    background: image-url("who-we-are-bg.jpg") no-repeat;
     background-size: 100%;
     width: 100%;
     height: 620px;
@@ -107,7 +107,7 @@ header{
       margin: 0 8%;
       .project-item{
         width: 22%;
-        margin-right: 4%;
+        margin-right: 3%;
         text-align: center;
         float: left;
         background: #fff;
@@ -123,6 +123,10 @@ header{
         h3{
           color: #3f3f3f;
           font-size: 24px;
+        }
+        a {
+          text-decoration: none;
+          color: #3f3f3f;
         }
       }
     }
