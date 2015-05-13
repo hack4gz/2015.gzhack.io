@@ -12,9 +12,20 @@
 </header>
 
 <section class="introduction-banner">
-  <div class="slogan">
-    <h1>开放数据之上的城市变革</h1>
-    <p>第二届广州创客马拉松 Hack for GZ</p>
+  <div id="js_slider" class="slider">
+    <!-- Slides Container -->
+    <div u="slides" class="slider-inner" style="">
+      <div><%= image_tag "homepage-slider-1.jpg", u: "image" %></div>
+      <div><%= image_tag "homepage-slider-2.jpg", u: "image" %></div>
+      <!--<div u="image" class="homepage-slider-1"></div>
+      <div u="image" class="homepage-slider-2"></div>-->
+    </div>
+    <!-- bullet navigator container -->
+    <div u="navigator" class="slider-navigator">
+      <!-- bullet navigator item prototype -->
+      <div u="prototype"></div>
+    </div>
+    <!-- #endregion Bullet Navigator Skin End -->
   </div>
 </section>
 
@@ -75,14 +86,35 @@
     <a href="http://air.epmap.org/"><%= image_tag "partners/qingyue.png", class: "logo" %></a>
     <a href="http://opendatachina.com/"><%= image_tag "partners/open_data_china.jpg", class: "logo" %></a>
     <a href="http://www.code4.hk/"><%= image_tag "partners/code4hk.png", class: "logo" %></a>
-    <a href="http://www.udparty.com/"><%= image_tag "partners/urban_data_party.jpg", class: "logo" %>
+    <a href="http://www.udparty.com/"><%= image_tag "partners/urban_data_party.jpg", class: "logo" %></a>
 
     <a href="http://beansmile.com/"><%= image_tag "partners/beansmile.png", class: "logo" %></a>
-    <a href="http://startupgrind.com/guangzhou/"><%= image_tag "partners/startupgrind_gz.jpg", class: "logo" %>
-    <a href="http://techparty.org/"><%= image_tag "partners/techparty.png", class: "logo" %>
-    <a href="http://www.ifanr.com/"><%= image_tag "partners/ifanr.jpg", class: "logo" %>
+    <a href="http://startupgrind.com/guangzhou/"><%= image_tag "partners/startupgrind_gz.jpg", class: "logo" %></a>
+    <a href="http://techparty.org/"><%= image_tag "partners/techparty.png", class: "logo" %></a>
+    <a href="http://www.ifanr.com/"><%= image_tag "partners/ifanr.jpg", class: "logo" %></a>
   </div>
 </section>
+
+<script>
+  var headerElem = document.getElementsByTagName('header')[0];
+  var bannerElem = document.querySelector('.introduction-banner');
+  var windowHeight = window.innerHeight;
+  var headerHeight = headerElem.offsetHeight;
+
+  bannerElem.style.height = (windowHeight - headerHeight) + 'px';
+
+  var options = {
+    //$AutoPlay: true,
+    $PauseOnHover: 0,
+    $Duration: 1000,
+    $FillMode: 2,
+    $BulletNavigatorOptions: {
+      $Class: $JssorBulletNavigator$,
+      $ChanceToShow: 2
+    }
+  };
+  var jssor_slider = new $JssorSlider$('js_slider', options);
+</script>
 
 <footer>
   

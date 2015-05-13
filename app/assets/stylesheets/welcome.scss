@@ -34,27 +34,41 @@ header{
 }
 
 .introduction-banner{
-  background: image-url("intro-banner-bg.png") no-repeat;
-  background-size: 100%;
   width: 100%;
-  height: 620px;
-  .slogan{
-    position: absolute;
+  height: 660px;
+  .slider{
+    position: relative;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    height: 144px;
-    left: 50%;
-    top: 50%;
-    margin-left: -50%;
-    margin-top: -72px;
-    text-align: center;
-    color: #ededeb;
-    h1{
-      font-size: 48px;
-      margin-bottom: 0.5em;
+    height: 100%; /* ??? */
+  }
+  .slider-inner {
+    cursor: move;
+    position: absolute;
+    overflow: hidden;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .slider-navigator {
+    bottom: 16px;
+    right: 50%;
+    position: absolute;
+    div, div:hover, .av {
+      position: absolute;
+      /* size of bullet elment */
+      width: 12px;
+      height: 12px;
+      background: image-url("bullet.png") no-repeat;
+      overflow: hidden;
+      cursor: pointer;
     }
-    p{
-      font-size: 24px;
-    }
+    div { background-position: -9px -9px; }
+    div:hover, .av:hover { background-position: -39px -9px; }
+    .av { background-position: -69px -9px; }
+    .dn, .dn:hover { background-position: -99px -9px; }
   }
 }
 
