@@ -9,7 +9,7 @@ header{
     margin-left: 80px;
     a{
       font-weight: 600;
-      color: #3f3f3f;
+      color: #616161;
       text-decoration: none;
       font-size: 1em;
       padding: 32px 0;
@@ -54,7 +54,7 @@ header{
   }
   .slider-navigator {
     bottom: 16px;
-    right: 50%;
+    right: calc(50% - 12px);
     position: absolute;
     div, div:hover, .av {
       position: absolute;
@@ -70,66 +70,87 @@ header{
     .av { background-position: -69px -9px; }
     .dn, .dn:hover { background-position: -99px -9px; }
   }
+  .signup_button {
+    width: 15.8%;
+    left: 42.1%;
+    bottom: 23.6%;
+    position: absolute;
+    text-decoration: none;
+    > div {
+      background-color: #37ac73;
+      font-size: 24px;
+      color: white;
+      font-family: Heiti, '黑体';
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
 }
 
 .who-we-are{
   position: relative;
-  
+
   .column-title{
     position: relative;
     height: 346px;
     .abstract{
-      position: absolute;
       width: 100%;
       height: 132px;
-      left: 50%;
-      top: 40%;
-      margin-left: -50%;
-      margin-top: -66px;
+      margin-top: 120px;
       text-align: center;
-      h2{
-        font-size: 36px;
-        margin-bottom: 48px;
-        color: #595959;
+      .title {
+        font-size: 48px;
+        margin-bottom: 50px;
+        color: #6c6c6c;
       }
       p{
         font-size: 24px;
-        color: #b0afaf;
-        margin-bottom: 8px;
+        line-height: 48px;
+        color: #848383;
+        font-family: Hiragino Sans GB;
+        word-spacing: 0.2em;
       }
     }
   }
-  .column-content{
+  /*.column-content{
     background: image-url("who-we-are-bg.jpg") no-repeat;
     background-size: 100%;
     width: 100%;
     height: 620px;
-  }
+  }*/
 }
 
 .open-source{
-  background: #f4f8f9;
+  background: #a52a2a;
   .column-title{
     text-align: center;
-    padding: 90px 0;
-    h2{
-      font-size: 36px;
-      color: #949494;
-    }
+    padding-top: 120px;
+    font-size: 48px;
+    color: white;
+  }
+  .column-subtitle {
+    margin: 28px auto 54px;
+    width: 70%;
+    font-size: 1.2em;
+    color: white;
+    font-family: Hiragino Sans SB;
+    font-weight: lighter;
+    text-align: center;
   }
   .open-source-content{
     .open-source-project-progress{
-      margin: 0 8%;
+      margin: 0 6%;
       .project-item{
-        width: 22%;
-        margin-right: 3%;
+        width: 25%;
         text-align: center;
         float: left;
         background: #fff;
-        border-radius: 5px;
         min-height: 256px;
+        box-sizing: border-box;
+        border-right: 1px solid #b0b0b0;
         &:last-child{
           margin-right: 0;
+          border-right: 0;
         }
         h6{
           color: #9f9f9f;
@@ -145,24 +166,29 @@ header{
         }
       }
     }
+
     .show-all-project{
+      position: relative;
       padding: 100px 0;
       text-align: center;
+      .articles {
+        position: absolute;
+        text-align: left;
+        margin-left: 6%;
+        a { color: white; text-decoration: none; }
+        p {
+          font-size: 18px;
+          padding: 4px 0;
+          border-bottom: 1px dotted #ccc;
+        }
+      }
       .show-all-project-btn{
-        width: 260px;
-        height: 80px;
-        line-height: 80px;
-        color: #949494;
-        border: 3px solid #a2a3a5;
-        border-radius: 5px;
-        background: #fff;
-        font-size: 24px;
-        display: block;
-        margin: 0 auto;
+        color: white;
+        font-size: 24fpx;
         text-decoration: none;
       }
     }
-  } 
+  }
 }
 
 .partners{

@@ -15,8 +15,15 @@
   <div id="js_slider" class="slider">
     <!-- Slides Container -->
     <div u="slides" class="slider-inner" style="">
-      <div><%= image_tag "homepage-slider-1.jpg", u: "image" %></div>
-      <div><%= image_tag "homepage-slider-2.jpg", u: "image" %></div>
+      <div>
+        <%= image_tag "homepage-slider-1.jpg", u: "image" %>
+      </div>
+      <div>
+        <%= image_tag "homepage-slider-2.jpg", u: "image" %>
+        <a class="signup_button" href="http://omg.com">
+          <div>报名参赛</div>
+        </a>
+      </div>
       <!--<div u="image" class="homepage-slider-1"></div>
       <div u="image" class="homepage-slider-2"></div>-->
     </div>
@@ -32,20 +39,23 @@
 <section class="who-we-are">
   <div class="column-title">
     <div class="abstract">
-      <h2>Who We Are</h2>
+      <p class="title">Who We Are</p>
       <p>我们是 gzhack，源自于广州技术社区、高校和公益组织的草根团队。</p>
       <p>我们希望在广州推广 hacker 文化和精神，推动更多的创新创造。</p>
       <p>我们举办讲座、工作坊、创客马拉松……</p>
       <p>今年，我们关注开放数据和公共数据，通过数据，建设我们的智慧广州。</p>
     </div>
   </div>
-  <div class="column-content">
-  </div>
+  <!--<div class="column-content">
+  </div>-->
 </section>
 
 <section class="open-source">
   <div class="column-title">
-    <h2>开源项目</h2>
+    开源项目进展
+  </div>
+  <div class="column-subtitle">
+    These are open Github Issues labeled with "help wanted" from across the civic technology movement.
   </div>
   <div class="open-source-content">
     <div class="open-source-project-progress clearfix">
@@ -63,14 +73,19 @@
       </div>
       <div class="project-item">
         <h6>合作帮助</h6>
-        <h3><a href="mailto:pr@gzhack.io">联系我们</h3>
+        <h3><a href="mailto:pr@gzhack.io">联系我们</a></h3>
       </div>
     </div>
+
     <div class="show-all-project">
-      <a href="" class="show-all-project-btn">展开所有</a>
+      <div class="articles">
+        <p><a href="">* 什么是开源项目</a></p>
+        <p><a href="">* 无需写代码，8种方式让你参与开源项目</a></p>
+      </div>
+      <a href="http://github.com/gzhack" class="show-all-project-btn">查看所有项目</a>
     </div>
   </div>
-  
+
 </section>
 
 <section class="partners">
@@ -117,5 +132,5 @@
 </script>
 
 <footer>
-  
+
 </footer>
