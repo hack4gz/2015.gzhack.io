@@ -155,12 +155,23 @@ header{
         a {
           text-decoration: none;
         }
+        h3 {
+          color: #3f3f3f;
+          font-size: 24px;
+          a { color: #3f3f3f; }
+        }
+        h6 {
+          color: #9f9f9f;
+          margin: 62px 0 52px;
+        }
         .wrapper {
           display: block;
           padding: 10px 0;
+          box-sizing: border-box;
+          height: 256px; // TODO: setup vars
         }
         .name {
-          margin-top: 15px;
+          margin-top: 35px;
           color: #6d6171;
           text-transform: uppercase;
           font-family: "Interstate", "Gotham A", "Gotham B", "Open Sans Regular", "Verdana", "Helvetica", "Arial";
