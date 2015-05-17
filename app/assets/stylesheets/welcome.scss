@@ -152,17 +152,40 @@ header{
           margin-right: 0;
           border-right: 0;
         }
-        h6{
-          color: #9f9f9f;
-          margin: 62px 0 52px;
-        }
-        h3{
-          color: #3f3f3f;
-          font-size: 24px;
-        }
         a {
           text-decoration: none;
-          color: #3f3f3f;
+        }
+        .wrapper {
+          display: block;
+          padding: 10px 0;
+        }
+        .name {
+          margin-top: 15px;
+          color: #6d6171;
+          text-transform: uppercase;
+          font-family: "Interstate", "Gotham A", "Gotham B", "Open Sans Regular", "Verdana", "Helvetica", "Arial";
+          line-height: 1.8em;
+        }
+        .issue-title {
+          margin-top: 20px;
+          font-family: "Freight Text", "Sentinel SSm A", "Sentinel SSm B", "Georgia", Times, sans-serif;
+          font-size: 24px;
+          line-height: 1.15em;
+          color: #399fd3;
+        }
+        .labels {
+          margin-top: 20px;
+        }
+        .label {
+          border: 1px solid #00a175;
+          background-color: #00a175;
+          display: inline-block;
+          color: #fff;
+          text-align: center;
+          border-radius: .33em;
+          margin: 5px;
+          padding: 5px 10px;
+          font-family: Interstate, 'Gotham A', 'Gotham B', 'Open Sans Regular', Verdana, Helvetica, Arial;
         }
       }
     }
