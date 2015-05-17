@@ -42,12 +42,13 @@ $.ajax(
       $issue.appendTo $('.open-source-project-progress')
       return
     )
-    console.log "done"
+    #console.log "done"
     return
 ).fail((xhr, textStatus, err) ->
-  console.log xhr
-  console.log textStatus
-  console.log err
+  console.log "Failed"
+  #console.log xhr
+  #console.log textStatus
+  #console.log err
   return
 ).always((data, textStatus, xhr) ->
   backups = [
@@ -81,7 +82,18 @@ $.ajax(
                 "</div>"
       $(htmlStr).appendTo $('.open-source-project-progress')
     )
-    # TODO add backup if there are not enough issues
-
   return
 )
+
+# FAQ tabs
+
+$(document).ready () ->
+  $('#faq .tab').click (e) ->
+    $this = $(e.target)
+    contentClass = $this.data("content")
+    unless $this.hasClass("active")
+      $('#faq .tab.active').removeClass "active"
+      $('#faq .content.active').removeClass "active"
+      $this.addClass "active"
+      $("#faq .content.#{contentClass}").addClass "active"
+    return

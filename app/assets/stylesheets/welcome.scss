@@ -183,6 +183,10 @@ header{
           font-size: 24px;
           line-height: 1.15em;
           color: #399fd3;
+
+          &:hover {
+            color: #000000;
+          }
         }
         .labels {
           margin-top: 20px;
@@ -225,21 +229,119 @@ header{
   }
 }
 
-.partners{
-  .column-title{
-    margin: 86px 0 56px;
-    h2{
+#faq {
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ccc;
+
+  .title {
+    margin-top: 120px;
+    font-size: 48px;
+    text-align: center;
+  }
+  .tabs {
+    width: 78%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 1.5em;
+    .tab {
+      float: left;
+      width: 25%;
       text-align: center;
-      color: #949494;
-      font-size: 36px;
+      padding: 10px 0;
+      border-bottom: 5px solid #acacac; // #818181 交叉...
+      cursor: pointer;
+    }
+    .tab.active {
+      &.contest { border-color: #d92000; }
+      &.signup { border-color: #f5cd01; }
+      &.food { border-color: #1382ff; }
+      &.misc { border-color: #3ac30f; }
     }
   }
-  .partners-logos{
-    .logo {
-      width: 24%;
-      /*margin: 0 0.5%;*/
+  .contents {
+    clear: both;
+    width: 78%;
+    margin: 0 auto;
+    min-height: 200px;
+    .content {
+      opacity: 0;
+      margin-top: 40px;
+      transition: opacity .5s linear;
+      -webkit-transition: opacity .5s linear;
+      -moz-transition: opacity .5s linear;
+      -o-transition: opacity .5s linear;
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      display: none;
+      &.active {
+        opacity: 1;
+        display: block;
+      }
+
+      &.contest .q-mark { background-color: #d92000; }
+      &.signup .q-mark { background-color: #f5cd01; }
+      &.food .q-mark { background-color: #1382ff; }
+      &.misc .q-mark { background-color: #3ac30f; }
     }
-    width: 80%;
-    margin: 0 auto 118px;
+    .q-item {
+      width: 46%;
+      overflow: hidden;
+      float: left;
+      margin-bottom: 1em;
+      &.odd { margin-right: 8%; }
+      .q-mark {
+        float: left;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+      }
+      .q-body {
+        float: left;
+        width: calc(100% - 30px);
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+      .question {
+        font-size: 20px;
+        color: #848383;
+        line-height: 30px;
+      }
+      .answer {
+        margin-top: 1em;
+        font-size: 20px;
+        line-height: 24px;
+        color: #414141;
+      }
+    }
+  }
+}
+
+#partners{
+  padding-top: 2em;
+  .category {
+    &.sponsor {
+      .content {
+        font-size: 20px;
+        text-align: center;
+        margin: 1em 0;
+      }
+    }
+
+    .subtitle {
+      color: #595959;
+      text-align: center;
+    }
+    .logo {
+      display: block;
+      margin: 2em auto;
+    }
+    &.community .logo {
+      width: 88%;
+    }
   }
 }
