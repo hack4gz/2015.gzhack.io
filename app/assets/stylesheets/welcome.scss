@@ -33,6 +33,32 @@ header{
   }
 }
 
+$signupButton: 24px;
+
+$whoWeAreTitle: 32px;
+$whoWeAreContent: 16px;
+
+$openSourceTitle: 32px;
+$openSourceSubtitle: 18px;
+$projectName: 18px;
+$projectHeight: 256px;
+$projectIssueTitle: 24px;
+$projectIssueLabel: 16px;
+$backupProjTitle: 24px;
+
+$showAllProj: 16px;
+$showAllProjButton: 20px;
+
+$faqTitle: 32px;
+$faqTab: 16px;
+
+$qMark: 30px;
+$qQuestion: 20px;
+$qAnswer: 16px;
+
+$partnerSponsorContent: 20px;
+$partnerSubtitle: 20px;
+
 .introduction-banner{
   width: 100%;
   height: 660px;
@@ -52,15 +78,16 @@ header{
     width: 100%;
     height: 100%;
   }
+  $navButtonSize: 12px;
   .slider-navigator {
     bottom: 16px;
-    right: calc(50% - 12px);
+    right: calc(50% - #{$navButtonSize});
     position: absolute;
     div, div:hover, .av {
       position: absolute;
       /* size of bullet elment */
-      width: 12px;
-      height: 12px;
+      width: $navButtonSize;
+      height: $navButtonSize;
       background: image-url("bullet.png") no-repeat;
       overflow: hidden;
       cursor: pointer;
@@ -73,65 +100,55 @@ header{
   .signup_button {
     width: 15.8%;
     left: 42.1%;
-    bottom: 23.6%;
+    bottom: 21.6%;
     position: absolute;
     text-decoration: none;
+    display: block;
     > div {
       background-color: #37ac73;
-      font-size: 24px;
+      font-size: $signupButton;
       color: white;
       font-family: Heiti, '黑体';
       text-align: center;
-      padding: 10px 0;
+      padding: 0.5em 0;
     }
   }
 }
 
 .who-we-are{
   position: relative;
-
-  .column-title{
-    position: relative;
-    height: 346px;
-    .abstract{
-      width: 100%;
-      height: 132px;
-      margin-top: 120px;
-      text-align: center;
-      .title {
-        font-size: 48px;
-        margin-bottom: 50px;
-        color: #6c6c6c;
-      }
-      p{
-        font-size: 24px;
-        line-height: 48px;
-        color: #848383;
-        font-family: Hiragino Sans GB;
-        word-spacing: 0.2em;
-      }
+  .abstract {
+    width: 100%;
+    margin-bottom: 3em;
+    text-align: center;
+    .title {
+      font-size: $whoWeAreTitle;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      color: #6c6c6c;
+    }
+    p {
+      font-size: $whoWeAreContent;
+      line-height: 2em;
+      color: #848383;
+      font-family: Hiragino Sans GB;
+      word-spacing: 0.2em;
     }
   }
-  /*.column-content{
-    background: image-url("who-we-are-bg.jpg") no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 620px;
-  }*/
 }
 
-.open-source{
+#open-source{
   background: #a52a2a;
-  .column-title{
+  .title {
     text-align: center;
-    padding-top: 120px;
-    font-size: 48px;
+    padding-top: 2em;
+    font-size: $openSourceTitle;
     color: white;
   }
-  .column-subtitle {
-    margin: 28px auto 54px;
+  .subtitle {
+    margin: 1.5em auto;
     width: 70%;
-    font-size: 1.2em;
+    font-size: $openSourceSubtitle;
     color: white;
     font-family: Hiragino Sans SB;
     font-weight: lighter;
@@ -145,7 +162,7 @@ header{
         text-align: center;
         float: left;
         background: #fff;
-        min-height: 256px;
+        height: $projectHeight;
         box-sizing: border-box;
         border-right: 1px solid #b0b0b0;
         &:last-child{
@@ -157,7 +174,7 @@ header{
         }
         h3 {
           color: #3f3f3f;
-          font-size: 24px;
+          font-size: $backupProjTitle;
           a { color: #3f3f3f; }
         }
         h6 {
@@ -168,19 +185,20 @@ header{
           display: block;
           padding: 10px 0;
           box-sizing: border-box;
-          height: 256px; // TODO: setup vars
+          height: $projectHeight;
         }
         .name {
-          margin-top: 35px;
+          margin-top: 2em;
+          font-size: $projectName;
           color: #6d6171;
           text-transform: uppercase;
           font-family: "Interstate", "Gotham A", "Gotham B", "Open Sans Regular", "Verdana", "Helvetica", "Arial";
           line-height: 1.8em;
         }
         .issue-title {
-          margin-top: 20px;
+          margin-top: 1em;
           font-family: "Freight Text", "Sentinel SSm A", "Sentinel SSm B", "Georgia", Times, sans-serif;
-          font-size: 24px;
+          font-size: $projectIssueTitle;
           line-height: 1.15em;
           color: #399fd3;
 
@@ -189,7 +207,7 @@ header{
           }
         }
         .labels {
-          margin-top: 20px;
+          margin-top: 1.5em;
         }
         .label {
           border: 1px solid #00a175;
@@ -198,31 +216,33 @@ header{
           color: #fff;
           text-align: center;
           border-radius: .33em;
-          margin: 5px;
-          padding: 5px 10px;
+          margin: 0.2em;
+          padding: 0.4em 0.6em;
           font-family: Interstate, 'Gotham A', 'Gotham B', 'Open Sans Regular', Verdana, Helvetica, Arial;
+          font-size: $projectIssueLabel;
         }
       }
     }
 
     .show-all-project{
       position: relative;
-      padding: 100px 0;
+      padding: 4em 0 3em;
       text-align: center;
       .articles {
         position: absolute;
         text-align: left;
         margin-left: 6%;
+        bottom: 3em;
         a { color: white; text-decoration: none; }
         p {
-          font-size: 18px;
-          padding: 4px 0;
+          font-size: $showAllProj;
+          padding: 0.2em 0;
           border-bottom: 1px dotted #ccc;
         }
       }
       .show-all-project-btn{
         color: white;
-        font-size: 24fpx;
+        font-size: $showAllProjButton;
         text-decoration: none;
       }
     }
@@ -234,35 +254,40 @@ header{
   border-bottom: 1px solid #ccc;
 
   .title {
-    margin-top: 120px;
-    font-size: 48px;
+    margin-top: 2em;
+    font-size: $faqTitle;
     text-align: center;
   }
+  $tabsNum: 5;
   .tabs {
     width: 78%;
-    margin: 0 auto;
+    margin: 1.5em auto 0;
     overflow: hidden;
-    margin-top: 1.5em;
     .tab {
       float: left;
-      width: 25%;
+      width: 100% / $tabsNum;
       text-align: center;
-      padding: 10px 0;
-      border-bottom: 5px solid #acacac; // #818181 交叉...
+      padding: 0.625em 0;
+      border-bottom: 0.35em solid #acacac;
       cursor: pointer;
+      font-size: $faqTab;
+
+      &.even {
+        border-bottom: 0.35em solid #818181;
+      }
     }
     .tab.active {
-      &.contest { border-color: #d92000; }
-      &.signup { border-color: #f5cd01; }
-      &.food { border-color: #1382ff; }
-      &.misc { border-color: #3ac30f; }
+      &.one { border-color: #d92000; }
+      &.two { border-color: #f5cd01; }
+      &.three { border-color: #1382ff; }
+      &.four { border-color: #3ac30f; }
+      &.five { border-color: #a429d7; }
     }
   }
   .contents {
     clear: both;
     width: 78%;
     margin: 0 auto;
-    min-height: 200px;
     .content {
       opacity: 0;
       margin-top: 40px;
@@ -280,41 +305,70 @@ header{
         display: block;
       }
 
-      &.contest .q-mark { background-color: #d92000; }
-      &.signup .q-mark { background-color: #f5cd01; }
-      &.food .q-mark { background-color: #1382ff; }
-      &.misc .q-mark { background-color: #3ac30f; }
+      &.transport {
+        .map {
+          width: 700px;
+          float: left;
+        }
+        .description {
+          width: calc(100% - 700px);
+          float: left;
+          padding: 50px 40px;
+          box-sizing: border-box;
+          font-size: 18px;
+          line-height: 1.5em;
+
+          p { margin-bottom: 1em; }
+        }
+      }
+      &.signup {
+        > div {
+          text-align: center;
+        }
+        a {
+          text-decoration: none;
+          color: #1382ff;
+        }
+      }
+      &.contact {
+        img { margin: 0 auto; display: block; }
+      }
+
+      &.one .q-mark { background-color: #d92000; }
+      &.two .q-mark { background-color: #f5cd01; }
+      &.three .q-mark { background-color: #1382ff; }
+      &.four .q-mark { background-color: #3ac30f; }
     }
     .q-item {
       width: 46%;
       overflow: hidden;
       float: left;
-      margin-bottom: 1em;
+      margin-bottom: 1.5em;
       &.odd { margin-right: 8%; }
       .q-mark {
         float: left;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
+        width: $qMark;
+        height: $qMark;
+        line-height: $qMark;
         border-radius: 50%;
         text-align: center;
         color: white;
       }
       .q-body {
         float: left;
-        width: calc(100% - 30px);
-        padding: 0 10px;
+        width: calc(100% - #{$qMark});
+        padding: 0 0.33em;
         box-sizing: border-box;
       }
       .question {
-        font-size: 20px;
+        font-size: $qQuestion;
         color: #848383;
-        line-height: 30px;
+        line-height: 1.5em;
       }
       .answer {
-        margin-top: 1em;
-        font-size: 20px;
-        line-height: 24px;
+        margin-top: 0.5em;
+        font-size: $qAnswer;
+        line-height: 1.5em;
         color: #414141;
       }
     }
@@ -326,22 +380,75 @@ header{
   .category {
     &.sponsor {
       .content {
-        font-size: 20px;
+        font-size: $partnerSponsorContent;
         text-align: center;
         margin: 1em 0;
       }
     }
-
     .subtitle {
       color: #595959;
       text-align: center;
+      font-size: $partnerSubtitle;
+      line-height: 1.5em;
     }
     .logo {
       display: block;
       margin: 2em auto;
-    }
+}
     &.community .logo {
       width: 88%;
     }
+  }
+}
+
+/*** For big screen ***/
+
+@mixin largerFont($size, $mul:1.5) {
+  font-size: $size * $mul;
+}
+body.screen_max {
+  .introduction-banner .signup_button > div {
+    @include largerFont($signupButton, 1.2);
+  }
+  .who-we-are .abstract {
+    .title { @include largerFont($whoWeAreTitle); }
+    p { @include largerFont($whoWeAreContent); }
+  }
+  #open-source {
+    .title { @include largerFont($openSourceTitle); }
+    .subtitle { @include largerFont($openSourceSubtitle); }
+  }
+  .project-item {
+    .wrapper { height: $projectHeight; }
+    .name { @include largerFont($projectName); }
+    h3 { @include largerFont($backupProjTitle); }
+    .issue-title { @include largerFont($projectIssueTitle); }
+    .label { @include largerFont($projectIssueLabel); }
+  }
+  .show-all-project {
+    .articles p { @include largerFont($showAllProj); }
+    .show-all-project-btn { @include largerFont($showAllProjButton); }
+  }
+  #faq {
+    .title {
+      @include largerFont($faqTitle);
+    }
+    .tab { @include largerFont($faqTab); }
+    .q-mark {
+      width: $qMark * 1.5;
+      height: $qMark * 1.5;
+      line-height: $qMark * 1.5;
+    }
+    .q-body {
+      width: calc(100% - #{$qMark * 1.5});
+    }
+    .question { @include largerFont($qQuestion); }
+    .answer { @include largerFont($qAnswer); }
+  }
+  #partners {
+    .category.sponsor .content {
+      @include largerFont($partnerSponsorContent);
+    }
+    .subtitle { @include largerFont($partnerSubtitle); }
   }
 }

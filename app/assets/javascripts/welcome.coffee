@@ -1,5 +1,5 @@
 ISSUE_PATH = "https://api.github.com/orgs/gzhack/issues"
-OAUTH_TOKEN = "134efa34c41f3cb20169ac1f15c9955cd30689f9"
+OAUTH_TOKEN = "29083a5f025ad655b8083c32781b00d46332f0dc"
 
 contributorPath = (repo)->
   "https://api.github.com/repos/gzhack/" + repo + "/stats/contributors"
@@ -85,9 +85,8 @@ $.ajax(
   return
 )
 
-# FAQ tabs
-
 $(document).ready () ->
+  # FAQ tabs
   $('#faq .tab').click (e) ->
     $this = $(e.target)
     contentClass = $this.data("content")
@@ -97,3 +96,122 @@ $(document).ready () ->
       $this.addClass "active"
       $("#faq .content.#{contentClass}").addClass "active"
     return
+
+  # Slider
+  $headerElem = $('header')
+  $bannerElem = $('.introduction-banner')
+  windowHeight = window.innerHeight
+  headerHeight = $headerElem[0].offsetHeight
+
+  $bannerElem.height(windowHeight - headerHeight)
+
+  jssor_slider = new $JssorSlider$ 'js_slider', {
+    $PauseOnHover: 0
+    $Duration: 1000
+    $FillMode: 2
+    $BulletNavigatorOptions:
+      $Class: $JssorBulletNavigator$
+      $ChanceToShow: 2
+  }
+
+  # Compatible size
+  $window = $(window)
+  $body = $("body")
+  if $window.width() > 1440
+    $body.addClass("screen_max") unless $body.hasClass("screen_max")
+
+  $window.on('resize', () ->
+    if $window.width() < 1440 and $body.hasClass("screen_max")
+      $body.removeClass("screen_max")
+    if $window.width() > 1440 and !$body.hasClass("screen_max")
+      $body.addClass("screen_max")
+    return
+  )
+
+  # Baidu map
+
+  ICON_URI = "http://api.map.baidu.com/lbsapi/createmap/images/icon.png"
+
+  # 创建和初始化地图函数
+  initMap = () ->
+    map = createMap() #创建地图
+    setMapEvent(map) #设置地图事件
+    addMapControl(map) #向地图添加控件
+    addMapOverlay(map) #向地图添加覆盖物
+    return
+
+  createMap = () ->
+    map = new BMap.Map("map");
+    map.centerAndZoom(new BMap.Point(113.38044,23.073011),16);
+    return map
+  setMapEvent = (map) ->
+    map.enableScrollWheelZoom()
+    map.enableKeyboard()
+    map.enableDragging()
+    map.enableDoubleClickZoom()
+    return
+
+  addClickHandler = (target,window) ->
+    target.addEventListener "click", () ->
+      target.openInfoWindow window
+    return
+
+  # 添加覆盖物
+  addMapOverlay = (map) ->
+    markers = [
+      content:"我的备注"
+      title:"6CIT Cafe"
+      imageOffset:
+        width:-46
+        height:-21
+      position:
+        lat:23.062794
+        lng:113.39217
+    ]
+    for m, index in markers
+      point = new BMap.Point(m.position.lng, m.position.lat)
+      marker = new BMap.Marker(point,
+        icon: new BMap.Icon(ICON_URI, new BMap.Size(20,25),
+          imageOffset: new BMap.Size(m.imageOffset.width,m.imageOffset.height)
+        )
+      )
+      label = new BMap.Label(m.title,
+        offset: new BMap.Size(25, 5)
+      )
+      opts =
+        width: 200
+        title: m.title
+        enableMessage: false
+      infoWindow = new BMap.InfoWindow(m.content, opts)
+      marker.setLabel label
+      addClickHandler marker, infoWindow
+      map.addOverlay marker
+    return
+
+  # 向地图添加控件
+  addMapControl = (map) ->
+    scaleControl = new BMap.ScaleControl(
+      anchor: BMAP_ANCHOR_BOTTOM_LEFT
+    )
+    scaleControl.setUnit BMAP_UNIT_IMPERIAL
+    map.addControl scaleControl
+    navControl = new BMap.NavigationControl(
+      anchor:BMAP_ANCHOR_TOP_LEFT
+      type:BMAP_NAVIGATION_CONTROL_LARGE
+    )
+    map.addControl navControl
+    overviewControl = new BMap.OverviewMapControl(
+      anchor:BMAP_ANCHOR_BOTTOM_RIGHT
+      isOpen:true
+    )
+    map.addControl overviewControl
+    return
+
+  initMap()
+  #map = createMap() #创建地图
+  #setMapEvent(map) #设置地图事件
+  #addMapControl(map) #向地图添加控件
+  #addMapOverlay(map) #向地图添加覆盖物
+  #console.log(map)
+
+  return
