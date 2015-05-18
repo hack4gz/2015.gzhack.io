@@ -1,5 +1,5 @@
 ISSUE_PATH = "https://api.github.com/orgs/gzhack/issues"
-OAUTH_TOKEN = "29083a5f025ad655b8083c32781b00d46332f0dc"
+OAUTH_TOKEN = "f47d4d1f44f7b3386f7fb36499b9fa41b7ed4c21"
 
 count = 0
 

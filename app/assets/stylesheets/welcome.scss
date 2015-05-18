@@ -328,6 +328,7 @@ $partnerSubtitle: 20px;
         a {
           text-decoration: none;
           color: #1382ff;
+          font-size: 20px;
         }
       }
       &.contact {
@@ -445,6 +446,9 @@ body.screen_max {
     }
     .question { @include largerFont($qQuestion); }
     .answer { @include largerFont($qAnswer); }
+    .content.signup a {
+      @include largerFont(20px);
+    }
   }
   #partners {
     .category.sponsor .content {
