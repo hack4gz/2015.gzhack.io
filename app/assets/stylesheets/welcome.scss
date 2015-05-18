@@ -138,7 +138,12 @@ $partnerSubtitle: 20px;
 }
 
 #open-source{
-  background: #a52a2a;
+  background-color: #a52a2a;
+  background-image: image-url("gz-background.png");
+  background-repeat: no-repeat;
+  background-size: auto 450px;
+  background-position: 100px 50px;
+
   .title {
     text-align: center;
     padding-top: 2em;
