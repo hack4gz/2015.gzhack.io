@@ -1,9 +1,6 @@
 ISSUE_PATH = "https://api.github.com/orgs/gzhack/issues"
 OAUTH_TOKEN = "29083a5f025ad655b8083c32781b00d46332f0dc"
 
-contributorPath = (repo)->
-  "https://api.github.com/repos/gzhack/" + repo + "/stats/contributors"
-
 count = 0
 
 $.ajax(
@@ -18,8 +15,6 @@ $.ajax(
   if console and console.log
     issues = data.map((d) ->
       repoName: d.repository.name
-      repourl: d.repository.html_url
-      repoDesc: d.repository.description
       title: d.title
       url: d.html_url
       labels: d.labels
@@ -42,13 +37,9 @@ $.ajax(
       $issue.appendTo $('.open-source-project-progress')
       return
     )
-    #console.log "done"
     return
 ).fail((xhr, textStatus, err) ->
   console.log "Failed"
-  #console.log xhr
-  #console.log textStatus
-  #console.log err
   return
 ).always((data, textStatus, xhr) ->
   backups = [
@@ -86,7 +77,9 @@ $.ajax(
 )
 
 $(document).ready () ->
+
   # FAQ tabs
+
   $('#faq .tab').click (e) ->
     $this = $(e.target)
     contentClass = $this.data("content")
@@ -115,6 +108,7 @@ $(document).ready () ->
   }
 
   # Compatible size
+
   $window = $(window)
   $body = $("body")
   if $window.width() > 1440
@@ -208,10 +202,4 @@ $(document).ready () ->
     return
 
   initMap()
-  #map = createMap() #创建地图
-  #setMapEvent(map) #设置地图事件
-  #addMapControl(map) #向地图添加控件
-  #addMapOverlay(map) #向地图添加覆盖物
-  #console.log(map)
-
   return
