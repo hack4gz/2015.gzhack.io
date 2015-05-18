@@ -4,9 +4,9 @@
   </div>
   <nav>
     <ul>
-      <li><a href="javascript:;">比赛介绍</a></li>
-      <li><a href="javascript:;">主题了解</a></li>
-      <li><a href="javascript:;">现场图集</a></li>
+      <!--<li><a href="javascript:;">比赛介绍</a></li>
+      <li><a href="javascript:;">主题了解</a></li>-->
+      <li><a href="http://www.huodongxing.com/event/9280906940000?utm_source=events&utm_medium=search&utm_campaign=hdxevents" target="_blank">报名参赛</a></li>
     </ul>
   </nav>
 </header>
@@ -15,8 +15,15 @@
   <div id="js_slider" class="slider">
     <!-- Slides Container -->
     <div u="slides" class="slider-inner" style="">
-      <div><%= image_tag "homepage-slider-1.jpg", u: "image" %></div>
-      <div><%= image_tag "homepage-slider-2.jpg", u: "image" %></div>
+      <div>
+        <%= image_tag "homepage-slider-1.jpg", u: "image" %>
+      </div>
+      <div>
+        <%= image_tag "homepage-slider-2.jpg", u: "image" %>
+        <a class="signup_button" href="http://www.huodongxing.com/event/9280906940000?utm_source=events&utm_medium=search&utm_campaign=hdxevents" target="_blank">
+          <div>报名参赛</div>
+        </a>
+      </div>
       <!--<div u="image" class="homepage-slider-1"></div>
       <div u="image" class="homepage-slider-2"></div>-->
     </div>
@@ -30,92 +37,143 @@
 </section>
 
 <section class="who-we-are">
-  <div class="column-title">
-    <div class="abstract">
-      <h2>Who We Are</h2>
-      <p>我们是 gzhack，源自于广州技术社区、高校和公益组织的草根团队。</p>
-      <p>我们希望在广州推广 hacker 文化和精神，推动更多的创新创造。</p>
-      <p>我们举办讲座、工作坊、创客马拉松……</p>
-      <p>今年，我们关注开放数据和公共数据，通过数据，建设我们的智慧广州。</p>
-    </div>
-  </div>
-  <div class="column-content">
+  <div class="abstract">
+    <div class="title">Who We Are</div>
+    <p>我们是 gzhack，源自于广州技术社区、高校和公益组织的草根团队。</p>
+    <p>我们希望在广州推广 hacker 文化和精神，推动更多的创新创造。</p>
+    <p>我们举办讲座、工作坊、创客马拉松……</p>
+    <p>今年，我们关注开放数据和公共数据，通过数据，建设我们的智慧广州。</p>
   </div>
 </section>
 
-<section class="open-source">
-  <div class="column-title">
-    <h2>开源项目</h2>
+<section id="open-source">
+  <div class="title">
+    开源项目进展
+  </div>
+  <div class="subtitle">
+    These are open Github Issues labeled with "help wanted" from across the civic technology movement.
   </div>
   <div class="open-source-content">
-    <div class="open-source-project-progress clearfix">
-      <div class="project-item">
-        <h6>数据门户</h6>
-        <h3><a href="http://data.gzhack.io/">开放数据广州</a></h3>
-      </div>
-      <div class="project-item">
-        <h6>开源组织</h6>
-        <h3><a href="https://github.com/gzhack/">GZHACK repos</a></h3>
-      </div>
-      <div class="project-item">
-        <h6>项目想法</h6>
-        <h3><a href="http://wifimap.herokuapp.com/">Wifi 领养计划</a></h3>
-      </div>
-      <div class="project-item">
-        <h6>合作帮助</h6>
-        <h3><a href="mailto:pr@gzhack.io">联系我们</h3>
-      </div>
-    </div>
+    <div class="open-source-project-progress clearfix"></div>
+
     <div class="show-all-project">
-      <a href="" class="show-all-project-btn">展开所有</a>
+      <!--<div class="articles">
+        <p><a href="#">* 什么是开源项目</a></p>
+        <p><a href="#">* 无需写代码，8种方式让你参与开源项目</a></p>
+      </div>-->
+      <a href="http://github.com/gzhack" class="show-all-project-btn" target="_blank">查看所有项目</a>
     </div>
   </div>
-  
+
 </section>
 
-<section class="partners">
-  <div class="column-title">
-    <h2>合作伙伴</h2>
+<section id="faq">
+  <h3 class="title">常见问题</h3>
+  <div class="tabs">
+    <div class="tab contest one active" data-content="contest">比赛概况</div>
+    <div class="tab transport two even" data-content="transport">交通信息</div>
+    <div class="tab signup three" data-content="signup">报名</div>
+    <div class="tab food four even" data-content="food">食宿</div>
+    <div class="tab misc five" data-content="contact">联系我们</div>
   </div>
-  <div class="partners-logos">
-    <a href="http://www.nscc-gz.cn/"><%= image_tag "partners/chaosuanzhongxin.png", class: "logo" %></a>
-    <a href="https://www.youmi.net/"><%= image_tag "partners/youmi.png", class: "logo" %></a>
-    <a href="http://www.6cit.com"><%= image_tag "partners/6cit.jpg", class: "logo" %></a>
-    <a href="https://seoul.globalhackathon.io/"><%= image_tag "partners/global_hackathon.png", class: "logo" %>
-
-    <a href="http://air.epmap.org/"><%= image_tag "partners/qingyue.png", class: "logo" %></a>
-    <a href="http://opendatachina.com/"><%= image_tag "partners/open_data_china.jpg", class: "logo" %></a>
-    <a href="http://www.code4.hk/"><%= image_tag "partners/code4hk.png", class: "logo" %></a>
-    <a href="http://www.udparty.com/"><%= image_tag "partners/urban_data_party.jpg", class: "logo" %></a>
-
-    <a href="http://beansmile.com/"><%= image_tag "partners/beansmile.png", class: "logo" %></a>
-    <a href="http://startupgrind.com/guangzhou/"><%= image_tag "partners/startupgrind_gz.jpg", class: "logo" %></a>
-    <a href="http://techparty.org/"><%= image_tag "partners/techparty.png", class: "logo" %></a>
-    <a href="http://www.ifanr.com/"><%= image_tag "partners/ifanr.jpg", class: "logo" %></a>
+  <div class="contents">
+    <div class="content contest one active">
+      <div class="q-item odd">
+        <div class="q-mark">?</div>
+        <div class="q-body">
+          <div class="question">我们需要怎样的你？</div>
+          <div class="answer">
+            开发者、设计师、数据分析师、工程师等等任何行业具有专业知识，并对改善城市拥有奇（巨）思（大）妙（脑）想（洞）！
+          </div>
+        </div>
+      </div>
+      <div class="q-item">
+        <div class="q-mark">?</div>
+        <div class="q-body">
+          <div class="question">比赛时间和地点？</div>
+          <div class="answer">
+            <p>2015年6月5日 14:00 ～ 2015年6月7日 22:00</p>
+            <p>（广东广州）广州市番禺区大学城青蓝街22号6CIT咖啡厅</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content transport two">
+      <div class="map">
+        <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+      </div>
+      <div class="description">
+        <p><a href="http://j.map.baidu.com/ykid3">戳我查看路线</a></p>
+        <p><strong>市内：</strong>乘坐地铁4号线到大学城北站，从C出口出地铁站，右手边十字路口右侧写字楼B座一楼</p>
+        <p>或乘坐公交车到地铁大学城北站或综合商业北区</p>
+        <p><strong>市外：</strong>机场与各火车站均有可达大学城北站的地铁</p>
+      </div>
+    </div>
+    <div class="content signup three">
+      <div><a href="http://www.huodongxing.com/event/9280906940000?utm_source=events&utm_medium=search&utm_campaign=hdxevents" target="_blank">报名参赛链接</a></div>
+    </div>
+    <div class="content food four">
+      <div class="q-item">
+        <div class="q-mark">?</div>
+        <div class="q-body">
+          <div class="question">饮食</div>
+          <div class="answer">
+            正餐＋零食，48小时不间断！
+          </div>
+        </div>
+      </div>
+      <div class="q-item odd">
+        <div class="q-mark">?</div>
+        <div class="q-body">
+          <div class="question">住宿</div>
+          <div class="answer">
+            <p>现场设有休息区，你也可以回家住宿。</p>
+            <p>当然，住在现场气氛更好，也更有更高效率的交流～</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content contact five">
+      <%= image_tag "qrcode.jpg" %>
+    </div>
   </div>
 </section>
 
-<script>
-  var headerElem = document.getElementsByTagName('header')[0];
-  var bannerElem = document.querySelector('.introduction-banner');
-  var windowHeight = window.innerHeight;
-  var headerHeight = headerElem.offsetHeight;
-
-  bannerElem.style.height = (windowHeight - headerHeight) + 'px';
-
-  var options = {
-    //$AutoPlay: true,
-    $PauseOnHover: 0,
-    $Duration: 1000,
-    $FillMode: 2,
-    $BulletNavigatorOptions: {
-      $Class: $JssorBulletNavigator$,
-      $ChanceToShow: 2
-    }
-  };
-  var jssor_slider = new $JssorSlider$('js_slider', options);
-</script>
+<section id="partners">
+  <div class="category sponsor">
+    <div class="subtitle">主办方</div>
+    <div class="content">
+      <span>广州大学城管理委员会</span>
+      <span>广州创客马拉松组委会</span>
+    </div>
+  </div>
+  <div class="category">
+    <div class="subtitle">承办方</div>
+    <div class="content">
+      <%= image_tag "partners/organizers.png", class: "logo", style: "margin-top: 0" %>
+    </div>
+  </div>
+  <div class="category">
+    <div class="subtitle">赞助商</div>
+    <div class="content">
+      <%= image_tag "partners/chaosuan.jpg", class: "logo" %>
+    </div>
+  </div>
+  <div class="category">
+    <div class="subtitle">开放数据合作伙伴</div>
+    <div class="content">
+      <%= image_tag "partners/data-partners.png", class: "logo" %>
+    </div>
+  </div>
+  <div class="category community">
+    <div class="subtitle">社区合作伙伴</div>
+    <div class="content">
+      <%= image_tag "partners/community-partners.png", class: "logo" %>
+    </div>
+  </div>
+</section>
 
 <footer>
-  
+
 </footer>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GmcdUsRI45IdxwPLukEFMgVI"></script>
