@@ -12,27 +12,15 @@
 </header>
 
 <section class="introduction-banner">
-  <div id="js_slider" class="slider">
-    <!-- Slides Container -->
-    <div u="slides" class="slider-inner" style="">
-      <div>
-        <%= image_tag "homepage-slider-1.jpg", u: "image" %>
-      </div>
-      <div>
-        <%= image_tag "homepage-slider-2.jpg", u: "image" %>
+  <div id="js-slider" class="slider">
+    <ul>
+      <li class="pic-1"></li>
+      <li class="pic-2" style="position: relative">
         <a class="signup_button" href="http://www.huodongxing.com/event/9280906940000?utm_source=events&utm_medium=search&utm_campaign=hdxevents" target="_blank">
           <div>报名参赛</div>
         </a>
-      </div>
-      <!--<div u="image" class="homepage-slider-1"></div>
-      <div u="image" class="homepage-slider-2"></div>-->
-    </div>
-    <!-- bullet navigator container -->
-    <div u="navigator" class="slider-navigator">
-      <!-- bullet navigator item prototype -->
-      <div u="prototype"></div>
-    </div>
-    <!-- #endregion Bullet Navigator Skin End -->
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -147,7 +135,7 @@
       <span>广州创客马拉松组委会</span>
     </div>
   </div>
-  <div class="category">
+  <div class="category organizer">
     <div class="subtitle">承办方</div>
     <div class="content">
       <%= image_tag "partners/organizers.png", class: "logo", style: "margin-top: 0" %>
@@ -176,4 +164,5 @@
 <footer>
 
 </footer>
+<%= javascript_include_tag 'unslider' %>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GmcdUsRI45IdxwPLukEFMgVI"></script>

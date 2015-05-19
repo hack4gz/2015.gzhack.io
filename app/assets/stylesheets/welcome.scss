@@ -60,47 +60,69 @@ $partnerSponsorContent: 20px;
 $partnerSubtitle: 20px;
 
 .introduction-banner{
-  width: 100%;
-  height: 660px;
+  //width: 100%;
+  //height: 660px;
   .slider{
     position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%; /* ??? */
-  }
-  .slider-inner {
-    cursor: move;
-    position: absolute;
-    overflow: hidden;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-  }
-  $navButtonSize: 12px;
-  .slider-navigator {
-    bottom: 16px;
-    right: calc(50% - #{$navButtonSize});
-    position: absolute;
-    div, div:hover, .av {
-      position: absolute;
-      /* size of bullet element */
-      width: $navButtonSize;
-      height: $navButtonSize;
-      background: image-url("bullet.png") no-repeat;
-      overflow: hidden;
-      cursor: pointer;
+    overflow: auto;
+    text-align: center;
+    ul { list-style: none; }
+    ul li {
+      display: block;
+      float: left;
+
+      background-size: 100% 100%;
+      -webkit-background-size: 100% 100%;
+      -moz-background-size: 100% 100%;
+      -ms-background-size: 100% 100%;
+      -o-background-size: 100% 100%;
+
+      min-height: 600px;
+      box-sizing: border-box;
+      &.pic-1 {
+        background-image: image-url("homepage-slider-1.jpg");
+      }
+      &.pic-2 {
+        background-image: image-url("homepage-slider-2.jpg");
+      }
     }
-    div { background-position: -9px -9px; }
-    div:hover, .av:hover { background-position: -39px -9px; }
-    .av { background-position: -69px -9px; }
-    .dn, .dn:hover { background-position: -99px -9px; }
+    .dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+
+      li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+        text-indent: -999em;
+        border: 2px solid #fff;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: .4;
+        box-sizing: border-box;
+        transition: background .5s, opacity .5s;
+        -webkit-transition: background .5s, opacity .5s;
+        -moz-transition: background .5s, opacity .5s;
+        -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        &.active {
+          opacity: 1;
+          background: #fff;
+        }
+      }
+    }
   }
+
   .signup_button {
     width: 15.8%;
     left: 42.1%;
-    bottom: 21.6%;
+    bottom: 21.8%;
     position: absolute;
     text-decoration: none;
     display: block;
@@ -402,6 +424,9 @@ $partnerSubtitle: 20px;
       display: block;
       margin: 2em auto 0;
 }
+    &.organizer .logo {
+      width: 60%;
+    }
     &.community .logo {
       width: 88%;
     }
@@ -437,9 +462,7 @@ body.screen_max {
     .show-all-project-btn { @include largerFont($showAllProjButton); }
   }
   #faq {
-    .title {
-      @include largerFont($faqTitle);
-    }
+    .title { @include largerFont($faqTitle); }
     .tab { @include largerFont($faqTab); }
     .q-mark {
       width: $qMark * 1.5;
@@ -451,9 +474,7 @@ body.screen_max {
     }
     .question { @include largerFont($qQuestion); }
     .answer { @include largerFont($qAnswer); }
-    .content.signup a {
-      @include largerFont(20px);
-    }
+    .content.signup a { @include largerFont(20px); }
   }
   #partners {
     .category.sponsor .content {

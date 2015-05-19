@@ -78,6 +78,7 @@ $.ajax(
 
 $(document).ready () ->
 
+  $window = $(window)
   # FAQ tabs
 
   $('#faq .tab').click (e) ->
@@ -91,21 +92,16 @@ $(document).ready () ->
     return
 
   # Slider
-  $headerElem = $('header')
-  $bannerElem = $('.introduction-banner')
-  windowHeight = window.innerHeight
-  headerHeight = $headerElem[0].offsetHeight
 
-  $bannerElem.height(windowHeight - headerHeight)
+  if window.chrome
+    $('#js-slider li').css('background-size', '100% 100%')
 
-  jssor_slider = new $JssorSlider$ 'js_slider', {
-    $PauseOnHover: 0
-    $Duration: 1000
-    $FillMode: 2
-    $BulletNavigatorOptions:
-      $Class: $JssorBulletNavigator$
-      $ChanceToShow: 2
-  }
+  $('#js-slider').unslider(
+    delay: 3000
+    speed: 500
+    fluid: true
+    dots: true
+  )
 
   # Compatible size
 
