@@ -1,9 +1,18 @@
 body{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+$headerHeight: 60px;
+$buttonColor: #37ac73;
+
 header{
-  height: 80px;
+  height: $headerHeight;
   background: #ededeb;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+
   .logo{
     float: left;
     margin-left: 80px;
@@ -11,9 +20,8 @@ header{
       font-weight: 600;
       color: #616161;
       text-decoration: none;
-      font-size: 1em;
-      padding: 32px 0;
       display: block;
+      line-height: $headerHeight;
     }
   }
   nav{
@@ -23,17 +31,31 @@ header{
       li{
         list-style: none;
         float: left;
-        padding: 32px;
+        padding: 0 32px;
+
+        $navButtonVerMargin: $headerHeight * 0.2 - 2px;
         a{
-          color: #3f3f3f;
           text-decoration: none;
+          display: block;
+          line-height: $headerHeight * 0.6;
+          margin: $navButtonVerMargin 0;
+          padding: 0 1.5em;
+          background-color: $buttonColor;
+          color: white;
+          border: 2px solid #37ac73;
+
+          &:hover {
+            background-color: transparent;
+            color: $buttonColor;
+          }
         }
       }
     }
   }
 }
 
-$signupButton: 24px;
+$sliderHeight: 600px;
+$signupButton: 18px;
 
 $whoWeAreTitle: 32px;
 $whoWeAreContent: 16px;
@@ -60,8 +82,7 @@ $partnerSponsorContent: 20px;
 $partnerSubtitle: 20px;
 
 .introduction-banner{
-  //width: 100%;
-  //height: 660px;
+  margin-top: $headerHeight;
   .slider{
     position: relative;
     overflow: auto;
@@ -77,7 +98,7 @@ $partnerSubtitle: 20px;
       -ms-background-size: 100% 100%;
       -o-background-size: 100% 100%;
 
-      min-height: 600px;
+      min-height: $sliderHeight;
       box-sizing: border-box;
       &.pic-1 {
         background-image: image-url("homepage-slider-1.jpg");
@@ -126,13 +147,21 @@ $partnerSubtitle: 20px;
     position: absolute;
     text-decoration: none;
     display: block;
+
+
     > div {
-      background-color: #37ac73;
+      background-color: $buttonColor;
+      border: 2px solid $buttonColor;
       font-size: $signupButton;
       color: white;
       font-family: Heiti, '黑体';
       text-align: center;
-      padding: 0.5em 0;
+      padding: 0.6em 0;
+
+      &:hover {
+        background-color: transparent;
+        color: $buttonColor;
+      }
     }
   }
 }
@@ -439,6 +468,9 @@ $partnerSubtitle: 20px;
   font-size: $size * $mul;
 }
 body.screen_max {
+  .introduction-banner .slider ul li {
+    min-height: $sliderHeight * 1.2;
+  }
   .introduction-banner .signup_button > div {
     @include largerFont($signupButton, 1.2);
   }
