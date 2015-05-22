@@ -100,11 +100,9 @@ $partnerSubtitle: 20px;
 
       min-height: $sliderHeight;
       box-sizing: border-box;
-      &.pic-1 {
-        background-image: image-url("homepage-slider-1.jpg");
-      }
-      &.pic-2 {
-        background-image: image-url("homepage-slider-2.jpg");
+
+      @for $i from 1 through 2 {
+        &.pic-#{$i} { background-image: image-url("homepage-slider-#{$i}.jpg"); }
       }
     }
     .dots {
@@ -147,7 +145,6 @@ $partnerSubtitle: 20px;
     position: absolute;
     text-decoration: none;
     display: block;
-
 
     > div {
       background-color: $buttonColor;
@@ -432,16 +429,34 @@ $partnerSubtitle: 20px;
   }
 }
 
+@mixin partner-section($imageUrl, $h, $w) {
+  background-image: image-url($imageUrl);
+  background-repeat: no-repeat;
+  float: left;
+  height: $h;
+  width: $w;
+}
+@mixin partner-inner-content() {
+  .content-inner {
+    text-align: center;
+    a { display: inline-block; }
+  }
+}
+@mixin partner-icon-list($list) {
+  @each $index, $x in $list {
+    &.partner-#{$index} { background-position: $x 0; }
+  }
+}
+
 #partners{
   padding-top: 2em;
   .category {
     margin-bottom: 2.5em;
-    &.sponsor {
-      .content {
-        font-size: $partnerSponsorContent;
-        text-align: center;
-        margin-top: 0.7em;
-      }
+    clear: both;
+
+    img.logo {
+      display: block;
+      margin: 0 auto;
     }
     .subtitle {
       color: #595959;
@@ -449,15 +464,60 @@ $partnerSubtitle: 20px;
       font-size: $partnerSubtitle;
       line-height: 1.5em;
     }
-    .logo {
-      display: block;
-      margin: 2em auto 0;
-}
-    &.organizer .logo {
-      width: 60%;
+    .content {
+      width: calc(100% - 260px);
+      margin: 0 auto;
     }
-    &.community .logo {
-      width: 88%;
+
+    &.sponsor {
+      .content {
+        font-size: $partnerSponsorContent;
+        text-align: center;
+        margin-top: 0.7em;
+      }
+    }
+    &.organizer {
+      @include partner-inner-content();
+      .partner {
+        @include partner-section("partners/organizers.png", 160px, 260px);
+        $list: (0: 0, 1: -260px, 2: -520px);
+        @include partner-icon-list($list);
+      }
+    }
+    &.media {
+      @include partner-inner-content();
+      .partner {
+        @include partner-section("partners/media-partners.png", 100px, 260px);
+        $list: (0: 0, 1: -300px);
+        @include partner-icon-list($list);
+      }
+    }
+    &.open-data {
+      @include partner-inner-content();
+      .partner {
+        @include partner-section("partners/data-partners.png", 100px, 280px);
+        $list: (0: 0, 1: -300px);
+        @include partner-icon-list($list);
+      }
+    }
+
+    &.community {
+      .partner {
+        @include partner-section("partners/community-partners.png", 120px, 180px);
+
+        box-sizing: border-box;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &.first { padding-left: 0; }
+        &.last { padding-right: 0; }
+
+        $list: (0: 0, 1: -225px, 2: -440px, 3: -665px,
+                4: -880px, 5: -1090px, 6: -1310px, 7: -1520px);
+        @include partner-icon-list($list);
+
+        &.partner-8 { background-position: 0 -147px; }
+      }
     }
   }
 }
