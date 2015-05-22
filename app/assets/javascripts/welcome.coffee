@@ -96,6 +96,25 @@ $(document).ready () ->
   if window.chrome
     $('#js-slider li').css('background-size', '100% 100%')
 
+  adjustSlider = (windowWidth) ->
+    height = windowWidth * 920 / 1980
+    $('#js-slider ul li').height(height);
+    $('#js-slider ul li').css('min-height', height);
+
+    if windowWidth < 600
+      fontSize = '12px'
+    else if windowWidth < 960
+      fontSize = '15px'
+    else if windowWidth < 1440
+      fontSize = '18px'
+    else
+      fontSize = 18 * 1.2 + 'px'
+
+    $('.signup_button div').css('font-size', fontSize);
+
+    $('#js-slider').height(height);
+
+  adjustSlider()
   $('#js-slider').unslider(
     delay: 3000
     speed: 500
@@ -111,10 +130,13 @@ $(document).ready () ->
     $body.addClass("screen_max") unless $body.hasClass("screen_max")
 
   $window.on('resize', () ->
-    if $window.width() < 1440 and $body.hasClass("screen_max")
+    width = $window.width()
+    if width < 1440 and $body.hasClass("screen_max")
       $body.removeClass("screen_max")
-    if $window.width() > 1440 and !$body.hasClass("screen_max")
+    if width > 1440 and !$body.hasClass("screen_max")
       $body.addClass("screen_max")
+
+    adjustSlider(width)
     return
   )
 
