@@ -591,6 +591,6 @@ body.screen_max {
     .category.sponsor .content {
       @include largerFont($partnerSponsorContent);
     }
-    .subtitle { @include largerFont($partnerSubtitle); }
+    .subtitle { @include largerFont($partnerSubtitle, 1.35); }
   }
 }
