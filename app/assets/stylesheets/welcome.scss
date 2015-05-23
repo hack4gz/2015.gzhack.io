@@ -54,7 +54,10 @@ header{
   }
 }
 
+$biggerScreenWidth: 1920px;
+
 $sliderHeight: 600px;
+$sliderHeightOnBiggerScreen: 720px;
 $signupButton: 18px;
 
 $whoWeAreTitle: 32px;
@@ -100,6 +103,10 @@ $partnerSubtitle: 20px;
 
       min-height: $sliderHeight;
       box-sizing: border-box;
+
+      @media only screen and (min-width: $biggerScreenWidth) {
+        min-height: $sliderHeightOnBiggerScreen;
+      }
 
       @for $i from 1 through 2 {
         &.pic-#{$i} { background-image: image-url("homepage-slider-#{$i}.jpg"); }
