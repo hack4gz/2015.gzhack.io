@@ -172,6 +172,7 @@ $partnerSubtitle: 20px;
 
 .who-we-are{
   position: relative;
+  font-weight: 300;
   .abstract {
     width: 100%;
     margin-bottom: 3em;
@@ -457,6 +458,7 @@ $partnerSubtitle: 20px;
 
 #partners{
   padding-top: 2em;
+  margin-bottom: 160px;
   .category {
     margin-bottom: 2.5em;
     clear: both;
@@ -549,7 +551,7 @@ body.screen_max {
   }
   #open-source {
     .title { @include largerFont($openSourceTitle); }
-    .subtitle { @include largerFont($openSourceSubtitle); }
+    .subtitle { @include largerFont($openSourceSubtitle, 1.2222); }
   }
   .project-item {
     .wrapper { height: $projectHeight; }
