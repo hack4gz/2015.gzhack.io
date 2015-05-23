@@ -442,9 +442,9 @@ $partnerSubtitle: 20px;
     a { display: inline-block; }
   }
 }
-@mixin partner-icon-list($list) {
+@mixin partner-icon-list($list, $y: 0) {
   @each $index, $x in $list {
-    &.partner-#{$index} { background-position: $x 0; }
+    &.partner-#{$index} { background-position: $x $y; }
   }
 }
 
@@ -503,7 +503,7 @@ $partnerSubtitle: 20px;
 
     &.community {
       .partner {
-        @include partner-section("partners/community-partners.png", 120px, 180px);
+        @include partner-section("partners/community-partners.png", 120px, 195px);
 
         box-sizing: border-box;
         padding-left: 20px;
@@ -516,7 +516,9 @@ $partnerSubtitle: 20px;
                 4: -880px, 5: -1090px, 6: -1310px, 7: -1520px);
         @include partner-icon-list($list);
 
-        &.partner-8 { background-position: 0 -147px; }
+        $list: (8: 0, 9: -215px, 10: -440px);
+        $backgroundPositionY: -147px;
+        @include partner-icon-list($list, $backgroundPositionY);
       }
     }
   }
