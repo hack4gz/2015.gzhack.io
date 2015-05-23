@@ -579,8 +579,13 @@ body.screen_max {
       width: calc(100% - #{$qMark * 1.5});
     }
     .question { @include largerFont($qQuestion); }
-    .answer { @include largerFont($qAnswer); }
     .content.signup a { @include largerFont(20px); }
+
+    .contents {
+      .q-item {
+        .answer { @include largerFont($qAnswer, 1.25); }
+      }
+    }
   }
   #partners {
     .category.sponsor .content {
