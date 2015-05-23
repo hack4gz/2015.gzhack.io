@@ -120,6 +120,7 @@ $(document).ready () ->
     speed: 500
     fluid: true
     dots: true
+    pause: true
   )
 
   # Compatible size

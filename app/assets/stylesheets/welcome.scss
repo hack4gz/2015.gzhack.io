@@ -90,6 +90,17 @@ $partnerSubtitle: 20px;
     position: relative;
     overflow: auto;
     text-align: center;
+    background: image-url("data-background.jpg");
+    background-size: 100% 100%;
+
+    .cities-background {
+      position: absolute;
+      bottom: 0;
+      img {
+        width: 100%;
+      }
+    }
+
     ul { list-style: none; }
     ul li {
       display: block;
@@ -104,12 +115,12 @@ $partnerSubtitle: 20px;
       min-height: $sliderHeight;
       box-sizing: border-box;
 
-      @media only screen and (min-width: $biggerScreenWidth) {
-        min-height: $sliderHeightOnBiggerScreen;
+      @for $i from 1 through 3 {
+        &.pic-#{$i} { background-image: image-url("homepage-slider-#{$i}.png"); }
       }
 
-      @for $i from 1 through 2 {
-        &.pic-#{$i} { background-image: image-url("homepage-slider-#{$i}.jpg"); }
+      @media only screen and (min-width: $biggerScreenWidth) {
+        min-height: $sliderHeightOnBiggerScreen;
       }
     }
     .dots {
@@ -148,7 +159,7 @@ $partnerSubtitle: 20px;
   .signup_button {
     width: 15.8%;
     left: 42.1%;
-    bottom: 21.8%;
+    bottom: 27%;
     position: absolute;
     text-decoration: none;
     display: block;
@@ -537,6 +548,11 @@ $partnerSubtitle: 20px;
 }
 
 /*** For big screen ***/
+@media only screen and (min-width: 1920px) {
+  .introduction-banner .slider ul li {
+    min-height: $sliderHeight * 1.2;
+  }
+}
 
 @mixin largerFont($size, $mul:1.5) {
   font-size: $size * $mul;
