@@ -54,7 +54,10 @@ header{
   }
 }
 
+$biggerScreenWidth: 1920px;
+
 $sliderHeight: 600px;
+$sliderHeightOnBiggerScreen: 720px;
 $signupButton: 18px;
 
 $whoWeAreTitle: 32px;
@@ -100,6 +103,10 @@ $partnerSubtitle: 20px;
 
       min-height: $sliderHeight;
       box-sizing: border-box;
+
+      @media only screen and (min-width: $biggerScreenWidth) {
+        min-height: $sliderHeightOnBiggerScreen;
+      }
 
       @for $i from 1 through 2 {
         &.pic-#{$i} { background-image: image-url("homepage-slider-#{$i}.jpg"); }
@@ -165,6 +172,8 @@ $partnerSubtitle: 20px;
 
 .who-we-are{
   position: relative;
+  font-weight: 300;
+  margin-bottom: 5em;
   .abstract {
     width: 100%;
     margin-bottom: 3em;
@@ -191,6 +200,7 @@ $partnerSubtitle: 20px;
   background-repeat: no-repeat;
   background-size: auto 450px;
   background-position: 100px 50px;
+  margin-bottom: 5em;
 
   .title {
     text-align: center;
@@ -206,6 +216,7 @@ $partnerSubtitle: 20px;
     font-family: Hiragino Sans SB;
     font-weight: lighter;
     text-align: center;
+    letter-spacing: 0.06em;
   }
   .open-source-content{
     .open-source-project-progress{
@@ -450,6 +461,7 @@ $partnerSubtitle: 20px;
 
 #partners{
   padding-top: 2em;
+  margin-bottom: 160px;
   .category {
     margin-bottom: 2.5em;
     clear: both;
@@ -542,7 +554,7 @@ body.screen_max {
   }
   #open-source {
     .title { @include largerFont($openSourceTitle); }
-    .subtitle { @include largerFont($openSourceSubtitle); }
+    .subtitle { @include largerFont($openSourceSubtitle, 1.2222); }
   }
   .project-item {
     .wrapper { height: $projectHeight; }
@@ -567,13 +579,18 @@ body.screen_max {
       width: calc(100% - #{$qMark * 1.5});
     }
     .question { @include largerFont($qQuestion); }
-    .answer { @include largerFont($qAnswer); }
     .content.signup a { @include largerFont(20px); }
+
+    .contents {
+      .q-item {
+        .answer { @include largerFont($qAnswer, 1.25); }
+      }
+    }
   }
   #partners {
     .category.sponsor .content {
       @include largerFont($partnerSponsorContent);
     }
-    .subtitle { @include largerFont($partnerSubtitle); }
+    .subtitle { @include largerFont($partnerSubtitle, 1.35); }
   }
 }
