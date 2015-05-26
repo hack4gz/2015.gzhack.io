@@ -27,7 +27,7 @@ class WelcomeController < ApplicationController
       { link: "http://i-element.org/", name: "创元素" },
       { link: "http://www.mongcj.com", name: "梦车间" },
       { link: "http://ss.sysu.edu.cn/", name: "中山大学学生软件技术发展中心" },
-      { anchor: "baibuti", name: "华工百步梯" },
+      { link: "http://100steps.net/", name: "华工百步梯" },
       { anchor: "jnu", name: "暨南大学政务数据开放与社会创新创业研究中心" }
     ]
   end
