@@ -7,7 +7,7 @@ $buttonColor: #37ac73;
 
 header{
   height: $headerHeight;
-  background: #ededeb;
+  background: rgba(237, 237, 235, .6);
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -21,7 +21,10 @@ header{
       color: #616161;
       text-decoration: none;
       display: block;
-      line-height: $headerHeight;
+      img{
+        height: 30px;
+        margin: 15px 0;
+      }
     }
   }
   nav{
@@ -37,8 +40,8 @@ header{
         a{
           text-decoration: none;
           display: block;
-          line-height: $headerHeight * 0.6;
-          margin: $navButtonVerMargin 0;
+          line-height: 26px;
+          margin: 15px 0;
           padding: 0 1.5em;
           background-color: $buttonColor;
           color: white;
