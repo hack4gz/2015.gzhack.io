@@ -35,4 +35,43 @@ module WelcomeHelper
       introduction + avatar + name
     end
   end
+
+  # 用于生成合作方 logo 的 section 内容代码
+  #
+  # member_list: 合作伙伴列表
+  #   link (optional)   合作伙伴友链
+  #   name              合作伙伴名称
+  #   anchor (optional) 合作伙伴的anchor(当友链不存在时使用)
+  #
+  # 示例:
+  #
+  # => dataSources = [
+  #      { link: "http://air.epmap.org/", name: "上海青悦" },
+  #      { anchor: "qingyue", name: "有米传媒" }
+  #    ]
+  # => partner_members(dataSources)
+  #
+  # <ul>
+  #   <li class="partner partner-0">
+  #     <a href="http://air.epmap.org/?from=gzhack"></a>
+  #   </li>
+  #   <li class="partner partner-1">
+  #     <a href="#qingyue"></a>
+  #   </li>
+  # </ul>
+  #
+  def partner_members(member_list)
+    li_list = member_list.map.with_index do |member, index|
+      content_tag :li, class: "partner partner-#{index}" do
+        if member[:link]
+          link_to "", "#{member[:link]}?from=gzhack", target: "_blank"
+        else
+          link_to "", "##{member[:anchor]}", target: "_blank"
+        end
+      end
+    end
+    content_tag :ul do
+      raw li_list.join("")
+    end
+  end
 end

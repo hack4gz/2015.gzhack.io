@@ -144,17 +144,7 @@
   <div class="category organizer">
     <div class="subtitle">承办方</div>
     <div class="content">
-      <div class="content-inner">
-        <a href="http://6cit.com/?from=gzhack" target="_blank">
-          <div class="partner partner-0"></div>
-        </a>
-        <a href="#partners">
-          <div class="partner partner-1"></div>
-        </a>
-        <a href="#partners">
-          <div class="partner partner-2"></div>
-        </a>
-      </div>
+      <%= partner_members(@organizers) %>
     </div>
   </div>
   <div class="category">
@@ -168,73 +158,21 @@
   <div class="category media">
     <div class="subtitle">媒体合作伙伴</div>
     <div class="content">
-      <div class="content-inner">
-        <a href="http://segmentfault.com/?from=gzhack" target="_blank">
-          <div class="partner partner-0"></div>
-        </a>
-        <a href="http://www.huodongxing.com/?from=gzhack" target="_blank">
-          <div class="partner partner-1"></div>
-        </a>
-        <a href="http://www.ngocn.net/?from=gzhack" target="_blank">
-          <div class="partner partner-2"></div>
-        </a>
-        <!--<%= image_tag "partners/media-partners.png", class: "logo" %>-->
-      </div>
+      <%= partner_members(@medias) %>
     </div>
   </div>
   <div class="category open-data">
     <div class="subtitle">开放数据合作伙伴</div>
     <div class="content">
-      <div class="content-inner">
-        <a href="http://air.epmap.org/?from=gzhack" target="_blank">
-          <div class="partner partner-0"></div>
-        </a>
-        <a href="https://www.youmi.net/?from=gzhack" target="_blank">
-          <div class="partner partner-1"></div>
-        </a>
-        <!--<%= image_tag "partners/data-partners.png", class: "logo" %>-->
-      </div>
+      <%= partner_members(@dataSources) %>
     </div>
   </div>
   <div class="category community">
     <div class="subtitle">社区合作伙伴</div>
     <div class="content">
-      <a href="https://seoul.globalhackathon.io/?from=gzhack" target="_blank">
-        <div class="partner partner-0"></div>
-      </a>
-      <a href="http://beansmile.com/?from=gzhack" target="_blank">
-        <div class="partner partner-1"></div>
-      </a>
-      <a href="http://www.code4.hk/?from=gzhack" target="_blank">
-        <div class="partner partner-2"></div>
-      </a>
-      <a href="http://opendatachina.com/?from=gzhack" target="_blank">
-        <div class="partner partner-3"></div>
-      </a>
-      <a href="http://techparty.org/?from=gzhack" target="_blank">
-        <div class="partner partner-4"></div>
-      </a>
-      <a href="http://www.udparty.com/?from=gzhack" target="_blank">
-        <div class="partner partner-5"></div>
-      </a>
-      <a href="http://startupgrind.com/guangzhou/?from=gzhack" target="_blank">
-        <div class="partner partner-6"></div>
-      </a>
-      <a href="http://www.sysu.edu.cn/?from=gzhack" target="_blank">
-        <div class="partner partner-7"></div>
-      </a>
-      <a href="http://www.jnu.edu.cn/?from=gzhack" target="_blank">
-        <div class="partner partner-8"></div>
-      </a>
-      <a href="http://ss.sysu.edu.cn/?from=gzhack" target="_blank">
-        <div class="partner partner-9"></div>
-      </a>
-      <a href="#huohu">
-        <div class="partner partner-10"></div>
-      </a>
+      <%= partner_members(@communities) %>
     </div>
   </div>
-
   <div class="clearfix"></div>
 </section>
 

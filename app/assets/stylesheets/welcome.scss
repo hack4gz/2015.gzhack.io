@@ -457,7 +457,7 @@ $partnerSubtitle: 20px;
 @mixin partner-section($imageUrl, $h, $w) {
   background-image: image-url($imageUrl);
   background-repeat: no-repeat;
-  float: left;
+  display: inline-block;
   height: $h;
   width: $w;
 }
@@ -493,6 +493,7 @@ $partnerSubtitle: 20px;
     .content {
       width: calc(100% - 260px);
       margin: 0 auto;
+      text-align: center;
     }
 
     &.sponsor {
@@ -514,7 +515,7 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/media-partners.png", 100px, 240px);
-        $list: (0: 0, 1: -280px, 2: -540px);
+        $list: (0: 0, 1: -270px, 2: -520px, 3: -800px);
         @include partner-icon-list($list);
       }
     }
@@ -522,14 +523,14 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/data-partners.png", 100px, 280px);
-        $list: (0: 0, 1: -300px);
+        $list: (0: 0, 1: -280px);
         @include partner-icon-list($list);
       }
     }
 
     &.community {
       .partner {
-        @include partner-section("partners/community-partners.png", 120px, 195px);
+        @include partner-section("partners/community-partners.png", 120px, 190px);
 
         box-sizing: border-box;
         padding-left: 20px;
@@ -542,8 +543,8 @@ $partnerSubtitle: 20px;
                 4: -880px, 5: -1090px, 6: -1310px, 7: -1520px);
         @include partner-icon-list($list);
 
-        $list: (8: 0, 9: -215px, 10: -440px);
-        $backgroundPositionY: -147px;
+        $list: (8: 0, 9: -215px, 10: -440px, 11: -650px, 12: -880px);
+        $backgroundPositionY: -130px;
         @include partner-icon-list($list, $backgroundPositionY);
       }
     }
