@@ -3,7 +3,7 @@ module WelcomeHelper
   #
   # name: 成员姓名
   # introduction: 成员的自我介绍内容
-  # class_name: 成员对应 css 的 class name，样式表根据此名称渲染正确的头像
+  # class_name: 成员对应 css 的 class name
   #
   # 示例:
   #
@@ -20,7 +20,7 @@ module WelcomeHelper
   #   <div class="name">嘉豪</div>
   # </li>
   #
-  def team_member(name, introduction, class_name)
+  def team_member(name, introduction, class_name = nil)
     content_tag :li, class: 'item' do
       introduction = content_tag :div, class: "introduction-container" do
         content = content_tag :div, introduction, class: 'content'
