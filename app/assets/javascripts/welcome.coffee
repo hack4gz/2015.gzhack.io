@@ -3,84 +3,89 @@ OAUTH_TOKEN = "f47d4d1f44f7b3386f7fb36499b9fa41b7ed4c21"
 
 count = 0
 
-$.ajax(
-  url: ISSUE_PATH
-  headers:
-    'Authorization': "token " + OAUTH_TOKEN
-  dataType: 'json'
-  data:
-    filter: 'all',
-    labels: 'help wanted'
-).done((data,textStatus, xhr) ->
-  if console and console.log
-    issues = data.map((d) ->
-      repoName: d.repository.name
-      title: d.title
-      url: d.html_url
-      labels: d.labels
-    )
-    issues = Array.prototype.slice.call(issues, 0, 4)
-    count = issues.length
-    issues.forEach((issue) ->
-      $issue = (()->
-        labelStr = issue.labels.map((l)->
-                    '<div class="label">' + l.name + '</div>'
-                   ).join("")
-        htmlStr = "<div class='project-item'>" +
-                  "<a class='wrapper' href='#{issue.url}'>" +
-                  "<p class='name'>#{issue.repoName}</p>" +
-                  "<h3 class='issue-title'>#{issue.title}</h3>" +
-                  "<div class='labels'>#{labelStr}</div>" +
-                  "</a></div>"
-        $(htmlStr)
-      )()
-      $issue.appendTo $('.open-source-project-progress')
-      return
-    )
+fetchIssues = ->
+  $.ajax(
+    url: ISSUE_PATH
+    headers:
+      'Authorization': "token " + OAUTH_TOKEN
+      dataType: 'json'
+      data:
+        filter: 'all',
+        labels: 'help wanted'
+  ).done((data,textStatus, xhr) ->
+    if console and console.log
+      issues = data.map((d) ->
+        repoName: d.repository.name
+        title: d.title
+        url: d.html_url
+        labels: d.labels
+      )
+      issues = Array.prototype.slice.call(issues, 0, 4)
+      count = issues.length
+      issues.forEach((issue) ->
+        $issue = (()->
+          labelStr = issue.labels.map((l)->
+                      '<div class="label">' + l.name + '</div>'
+                    ).join("")
+          htmlStr = "<div class='project-item'>" +
+                    "<a class='wrapper' href='#{issue.url}'>" +
+                    "<p class='name'>#{issue.repoName}</p>" +
+                    "<h3 class='issue-title'>#{issue.title}</h3>" +
+                    "<div class='labels'>#{labelStr}</div>" +
+                    "</a></div>"
+          $(htmlStr)
+        )()
+        $issue.appendTo $('.open-source-project-progress')
+        return
+      )
     return
-).fail((xhr, textStatus, err) ->
-  console.log "Failed"
+  ).fail((xhr, textStatus, err) ->
+    console.log "Failed"
+    return
+  ).always((data, textStatus, xhr) ->
+    backups = [
+      {
+        category: "项目想法"
+        url: "http://wifimap.herokuapp.com"
+        name: "Wifi 领养计划"
+      },
+      {
+        category: "合作帮助"
+        url: "mailto:pr@gzhack.io"
+        name: "联系我们"
+      },
+      {
+        category: "数据门户"
+        url: "http://data.gzhack.io"
+        name: "开放数据广州"
+      },
+      {
+        category: "开源组织"
+        url: "http://github.com/gzhack"
+        name: "GZHACK repos"
+      }
+    ]
+    if count < 4
+      toAdd = Array.prototype.slice.call(backups, 0, 4 - count)
+      toAdd.forEach((i) ->
+        htmlStr = "<div class='project-item'>" +
+                  "<h6>#{i.category}</h6>" +
+                  "<h3><a href='#{i.url}'>#{i.name}</a></h3>" +
+                  "</div>"
+        $(htmlStr).appendTo $('.open-source-project-progress')
+      )
+    return
+  )
   return
-).always((data, textStatus, xhr) ->
-  backups = [
-    {
-      category: "项目想法"
-      url: "http://wifimap.herokuapp.com"
-      name: "Wifi 领养计划"
-    },
-    {
-      category: "合作帮助"
-      url: "mailto:pr@gzhack.io"
-      name: "联系我们"
-    },
-    {
-      category: "数据门户"
-      url: "http://data.gzhack.io"
-      name: "开放数据广州"
-    },
-    {
-      category: "开源组织"
-      url: "http://github.com/gzhack"
-      name: "GZHACK repos"
-    }
-  ]
-  if count < 4
-    toAdd = Array.prototype.slice.call(backups, 0, 4 - count)
-    toAdd.forEach((i) ->
-      htmlStr = "<div class='project-item'>" +
-                "<h6>#{i.category}</h6>" +
-                "<h3><a href='#{i.url}'>#{i.name}</a></h3>" +
-                "</div>"
-      $(htmlStr).appendTo $('.open-source-project-progress')
-    )
-  return
-)
 
 $(document).ready () ->
 
-  $window = $(window)
-  # FAQ tabs
+  # Fetch Github issues
+  fetchIssues()
 
+  $window = $(window)
+
+  # FAQ tabs
   $('#faq .tab').click (e) ->
     $this = $(e.target)
     contentClass = $this.data("content")
