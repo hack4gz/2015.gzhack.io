@@ -476,6 +476,14 @@ $partnerSubtitle: 20px;
 #partners{
   padding-top: 2em;
   margin-bottom: 160px;
+
+  .partner {
+    a {
+      display: block;
+      height: 100%;
+    }
+  }
+
   .category {
     margin-bottom: 2.5em;
     clear: both;
