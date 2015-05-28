@@ -105,18 +105,6 @@ $(document).ready () ->
     height = windowWidth * ratio
     $('#js-slider ul li').height(height);
     $('#js-slider ul li').css('min-height', height);
-
-    if windowWidth < 600
-      fontSize = '12px'
-    else if windowWidth < 960
-      fontSize = '15px'
-    else if windowWidth < 1440
-      fontSize = '18px'
-    else
-      fontSize = 18 * 1.2 + 'px'
-
-    $('.signup_button div').css('font-size', fontSize);
-
     $('#js-slider').height(height);
 
   adjustSlider($window.width())

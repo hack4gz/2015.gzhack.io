@@ -108,6 +108,8 @@ $partnerSubtitle: 20px;
       display: block;
       float: left;
 
+      background-size: 100% 100%;
+
       min-height: $sliderHeight;
       box-sizing: border-box;
 
@@ -150,7 +152,7 @@ $partnerSubtitle: 20px;
   .signup_button {
     width: 15.8%;
     left: 42.1%;
-    bottom: 27%;
+    bottom: 25.5%;
     position: absolute;
     text-decoration: none;
     display: block;
@@ -159,6 +161,20 @@ $partnerSubtitle: 20px;
       background-color: $buttonColor;
       border: 2px solid $buttonColor;
       font-size: $signupButton;
+
+      @media only screen and (max-width: 600px) {
+        font-size: 12px;
+      }
+      @media only screen and (max-width: 980px) {
+        font-size: 15px;
+      }
+      @media only screen and (max-width: 1440px) {
+        font-size: 18px;
+      }
+      @media only screen and (min-width: 1440px) {
+        font-size: 21.6px;
+      }
+
       color: white;
       font-family: Heiti, '黑体';
       text-align: center;
