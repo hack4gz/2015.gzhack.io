@@ -9,11 +9,18 @@
     margin-right: 8px;
     margin-bottom: 8px;
 
-    $lastAvatar: 28;
+    $lastAvatar: 27;
     @for $i from 2 through $lastAvatar {
       &:nth-child(#{$i}) {
         .background-renderer {
-          background-position: -77px*($i - 1) 0;
+          // The following @if is to Skip Mr.Zhou temporarily
+          // TODO: waiting for designer to update background-image
+          @if $i < 23 {
+            background-position: -77px*($i - 1) 0;
+          }
+          @else {
+            background-position: -77px*$i 0;
+          }
         }
       }
     }
