@@ -93,7 +93,6 @@ $partnerSubtitle: 20px;
     position: relative;
     overflow: auto;
     text-align: center;
-    // background: image-url("data-background.jpg");
     background-size: 100% 100%;
 
     .cities-background {
@@ -109,12 +108,6 @@ $partnerSubtitle: 20px;
       display: block;
       float: left;
 
-      background-size: 100% 100%;
-      -webkit-background-size: 100% 100%;
-      -moz-background-size: 100% 100%;
-      -ms-background-size: 100% 100%;
-      -o-background-size: 100% 100%;
-
       min-height: $sliderHeight;
       box-sizing: border-box;
 
@@ -125,6 +118,7 @@ $partnerSubtitle: 20px;
       @media only screen and (min-width: $biggerScreenWidth) {
         min-height: $sliderHeightOnBiggerScreen;
       }
+
     }
     .dots {
       position: absolute;
@@ -144,12 +138,6 @@ $partnerSubtitle: 20px;
         opacity: .4;
         box-sizing: border-box;
         transition: background .5s, opacity .5s;
-        -webkit-transition: background .5s, opacity .5s;
-        -moz-transition: background .5s, opacity .5s;
-        -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-        -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-        -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-        -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
         filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
         &.active {
           opacity: 1;
@@ -370,9 +358,6 @@ $partnerSubtitle: 20px;
       opacity: 0;
       margin-top: 40px;
       transition: opacity .5s linear;
-      -webkit-transition: opacity .5s linear;
-      -moz-transition: opacity .5s linear;
-      -o-transition: opacity .5s linear;
       position: relative;
       top: 0;
       left: 0;
