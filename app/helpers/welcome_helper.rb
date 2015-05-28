@@ -66,7 +66,7 @@ module WelcomeHelper
         if member[:link]
           link_to "", "#{member[:link]}?from=gzhack", target: "_blank"
         else
-          link_to "", "##{member[:anchor]}", target: "_blank"
+          link_to "", "##{member[:anchor]}"
         end
       end
     end
