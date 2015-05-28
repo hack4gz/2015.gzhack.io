@@ -80,10 +80,8 @@ fetchIssues = ->
 
 $(document).ready () ->
 
-  # Fetch Github issues
-  fetchIssues()
-
   $window = $(window)
+  $body = $("body")
 
   # FAQ tabs
   $('#faq .tab').click (e) ->
@@ -102,7 +100,9 @@ $(document).ready () ->
     $('#js-slider li').css('background-size', '100% 100%')
 
   adjustSlider = (windowWidth) ->
-    height = windowWidth * 920 / 1980
+    #ratio = 920 / 1980
+    ratio = 840 / 1980
+    height = windowWidth * ratio
     $('#js-slider ul li').height(height);
     $('#js-slider ul li').css('min-height', height);
 
@@ -119,7 +119,8 @@ $(document).ready () ->
 
     $('#js-slider').height(height);
 
-  adjustSlider()
+  adjustSlider($window.width())
+
   $('#js-slider').unslider(
     delay: 3000
     speed: 500
@@ -130,8 +131,6 @@ $(document).ready () ->
 
   # Compatible size
 
-  $window = $(window)
-  $body = $("body")
   if $window.width() > 1440
     $body.addClass("screen_max") unless $body.hasClass("screen_max")
 
@@ -145,6 +144,8 @@ $(document).ready () ->
     adjustSlider(width)
     return
   )
+
+  fetchIssues() # Fetch Github issues
 
   # Baidu map
 
