@@ -409,7 +409,7 @@ $partnerSubtitle: 20px;
         }
       }
       &.contact {
-        img { margin: 0 auto; display: block; }
+        img { margin: 0 auto; display: block; max-width: 100%; }
       }
 
       &.one .q-mark { background-color: #d92000; }
@@ -514,7 +514,7 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/organizers.png", 100px, 260px);
-        $list: (0: 0, 1: -260px, 2: -520px);
+        $list: (0: 0, 1: -260px, 2: -540px);
         @include partner-icon-list($list);
       }
     }
@@ -522,7 +522,7 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/media-partners.png", 100px, 240px);
-        $list: (0: 0, 1: -270px, 2: -520px, 3: -800px);
+        $list: (0: 20px, 1: -260px, 2: -520px, 3: -815px);
         @include partner-icon-list($list);
       }
     }
@@ -634,6 +634,9 @@ body.screen_max {
     font-size: 12px;
     padding: 0.4em 2.5em;
   }
+  #partners .category .content {
+    width: auto;
+  }
 }
 @media (max-width: 480px) {
   header .logo {
@@ -658,5 +661,42 @@ body.screen_max {
       height: 6px;
       margin: 0 2px;
     }
+  }
+
+  .who-we-are .abstract {
+    .title { font-size: 24px; }
+    p { font-size: 14px; }
+  }
+  #open-source .open-source-content .open-source-project-progress .project-item {
+    height: 120px;
+    h3 {
+      font-size: 16px;
+    }
+    h6 {
+      margin: 20px 0 24px;
+      font-size: 14px;
+    }
+  }
+
+  #faq .tabs .tab {
+    font-size: 12px;
+  }
+  #faq .contents .q-item .question {
+    font-size: 14px;
+  }
+  #faq .contents .q-item .answer {
+    font-size: 12px;
+  }
+
+  #partners .category .subtitle, #partners .category.sponsor .content {
+    font-size: 16px;
+
+    span {
+      display: block;
+      margin-bottom: 1em;
+    }
+  }
+  #partners .category img.logo {
+    max-width: 100%;
   }
 }

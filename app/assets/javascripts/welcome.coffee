@@ -100,8 +100,10 @@ $(document).ready () ->
     $('#js-slider li').css('background-size', '100% 100%')
 
   adjustSlider = (windowWidth) ->
-    #ratio = 920 / 1980
-    ratio = 840 / 1980
+    if (windowWidth < 480)
+      ratio = 980 / 1980
+    else
+      ratio = 840 / 1980
     height = windowWidth * ratio
     $('#js-slider ul li').height(height);
     $('#js-slider ul li').css('min-height', height);
