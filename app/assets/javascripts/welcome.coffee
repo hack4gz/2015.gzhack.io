@@ -96,8 +96,15 @@ $(document).ready () ->
 
   # Slider
 
+  swiper = new Swiper('.swiper-container',
+    pagination: '.swiper-pagination'
+    paginationClickable: true,
+    autoplay: 3000,
+    loop: true
+  )
+
   if window.chrome
-    $('#js-slider li').css('background-size', '100% 100%')
+    $('.swiper-slide').css('background-size', '100% 100%')
 
   adjustSlider = (windowWidth) ->
     if (windowWidth < 480)
@@ -105,21 +112,23 @@ $(document).ready () ->
     else
       ratio = 840 / 1980
     height = windowWidth * ratio
-    $('#js-slider ul li').height(height);
-    $('#js-slider ul li').css('min-height', height);
-    $('#js-slider').height(height);
+    $('.swiper-slide').height(height);
+    $('.swiper-slide').css('min-height', height);
+
+    if windowWidth < 600
+      fontSize = '12px'
+    else if windowWidth < 960
+      fontSize = '15px'
+    else if windowWidth < 1440
+      fontSize = '18px'
+    else
+      fontSize = 18 * 1.2 + 'px'
+
+    $('.signup_button div').css('font-size', fontSize);
+
+    $('.swiper-container').height(height);
 
   adjustSlider($window.width())
-
-  $('#js-slider').unslider(
-    delay: 3000
-    speed: 500
-    fluid: true
-    dots: true
-    pause: true
-  )
-
-  # Compatible size
 
   if $window.width() > 1440
     $body.addClass("screen_max") unless $body.hasClass("screen_max")

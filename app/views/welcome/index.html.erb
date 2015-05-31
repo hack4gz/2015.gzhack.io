@@ -11,22 +11,22 @@
   </nav>
 </header>
 
-<section class="introduction-banner">
-  <div id="js-slider" class="slider">
-
-    <ul>
-      <li class="pic-1"></li>
-      <li class="pic-2" style="position: relative">
-        <div class="signup_wrapper">
-          <a class="signup_button" href="http://www.huodongxing.com/event/9280906940000?utm_source=events&utm_medium=search&utm_campaign=hdxevents/?from=gzhack " target="_blank">
-            <div>报名参赛</div>
-          </a>
-        </div>
-      </li>
-      <li class="pic-3"></li>
-    </ul>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide slide-1">
+    </div>
+    <div class="swiper-slide slide-2">
+      <div class="signup_wrapper">
+        <a class="signup_button" href="http://www.huodongxing.com/event/9280906940000?utm_source=events&utm_medium=search&utm_campaign=hdxevents/?from=gzhack " target="_blank">
+          <div>报名参赛</div>
+        </a>
+      </div>
+    </div>
+    <div class="swiper-slide slide-3">
+    </div>
   </div>
-</section>
+  <div class="swiper-pagination"></div>
+</div>
 
 <section class="who-we-are">
   <div class="abstract">
@@ -181,5 +181,5 @@
 <footer>
 
 </footer>
-<%= javascript_include_tag 'unslider' %>
+<%= javascript_include_tag 'swiper' %>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GmcdUsRI45IdxwPLukEFMgVI"></script>

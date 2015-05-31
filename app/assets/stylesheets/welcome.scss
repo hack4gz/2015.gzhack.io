@@ -87,91 +87,70 @@ $qAnswer: 16px;
 $partnerSponsorContent: 20px;
 $partnerSubtitle: 20px;
 
-.introduction-banner{
+// swiper
+.swiper-container {
   margin-top: $headerHeight;
-  .slider{
-    position: relative;
-    overflow: auto;
+}
+.swiper-wrapper {
+  text-align: center;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: 100% 100%;
+  min-height: $sliderHeight;
+  box-sizing: border-box;
+  @for $i from 1 through 3 {
+    &.slide-#{$i} { background-image: image-url("homepage-slider-#{$i}.png"); }
+  }
+  @media only screen and (min-width: $biggerScreenWidth) {
+    min-height: $sliderHeightOnBiggerScreen;
+  }
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: none;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .4;
+  box-sizing: border-box;
+  transition: background .5s, opacity .5s;
+  -webkit-transition: background .5s, opacity .5s;
+  -moz-transition: background .5s, opacity .5s;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+  -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+  -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+  -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+}
+.swiper-pagination-bullet-active {
+  color: #fff;
+  opacity: 1;
+  background-color: #fff;
+}
+.signup_wrapper {
+  position: absolute;
+  bottom: 25%;
+  width: 100%;
+}
+.signup_button {
+  text-decoration: none;
+  display: inline-block;
+
+  > div {
+    background-color: $buttonColor;
+    border: 2px solid $buttonColor;
+    font-size: $signupButton;
+    color: white;
+    font-family: Heiti, '黑体';
     text-align: center;
-    background-size: 100% 100%;
+    padding: 0.6em 2.5em;
 
-    .cities-background {
-      position: absolute;
-      bottom: 0;
-      img {
-        width: 100%;
-      }
-    }
-
-    ul { list-style: none; }
-    ul li {
-      display: block;
-      float: left;
-
-      background-size: 100% 100%;
-
-      min-height: $sliderHeight;
-      box-sizing: border-box;
-
-      @for $i from 1 through 3 {
-        &.pic-#{$i} { background-image: image-url("homepage-slider-#{$i}.png"); }
-      }
-
-      @media only screen and (min-width: $biggerScreenWidth) {
-        min-height: $sliderHeightOnBiggerScreen;
-      }
-
-    }
-    .dots {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 20px;
-
-      li {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        margin: 0 4px;
-        text-indent: -999em;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: .4;
-        box-sizing: border-box;
-        transition: background .5s, opacity .5s;
-        filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-        &.active {
-          opacity: 1;
-          background: #fff;
-        }
-      }
-    }
-  }
-
-  .signup_wrapper {
-    position: absolute;
-    bottom: 25%;
-    width: 100%;
-  }
-  .signup_button {
-    text-decoration: none;
-    display: inline-block;
-
-    > div {
-      background-color: $buttonColor;
-      border: 2px solid $buttonColor;
-      font-size: $signupButton;
-
-      color: white;
-      font-family: Heiti, '黑体';
-      text-align: center;
-      padding: 0.6em 2.5em;
-
-      &:hover {
-        background-color: transparent;
-        color: $buttonColor;
-      }
+    &:hover {
+      background-color: transparent;
+      color: $buttonColor;
     }
   }
 }
@@ -560,7 +539,7 @@ $partnerSubtitle: 20px;
 
 /*** For big screen ***/
 @media only screen and (min-width: 1920px) {
-  .introduction-banner .slider ul li {
+  .swiper-container .swiper-wrapper .swiper-slide {
     min-height: $sliderHeight * 1.2;
   }
 }
@@ -620,22 +599,19 @@ body.screen_max {
 
 // Responsive design
 @media (max-width: 1280px) {
-  .introduction-banner .signup_button > div {
+  .signup_button > div {
     font-size: 18px;
   }
 }
 @media (max-width: 960px) {
-  .introduction-banner .signup_button > div {
+  .signup_button > div {
     font-size: 16px;
   }
 }
 @media (max-width: 767px) {
-  .introduction-banner .signup_button > div {
+  .signup_button > div {
     font-size: 12px;
     padding: 0.4em 2.5em;
-  }
-  #partners .category .content {
-    width: auto;
   }
 }
 @media (max-width: 480px) {
@@ -645,18 +621,18 @@ body.screen_max {
   header nav ul {
     right: 20px;
   }
-  .introduction-banner .signup_wrapper {
+  .signup_wrapper {
     bottom: 24%;
   }
-  .introduction-banner .signup_button > div {
+  .signup_button > div {
     font-size: 8px;
     line-height: 8px;
   }
-  .introduction-banner .slider .dots {
+  .swiper-pagination {
     bottom: 6px;
     height: 12px;
 
-    li {
+    .swiper-pagination-bullet {
       width: 6px;
       height: 6px;
       margin: 0 2px;
