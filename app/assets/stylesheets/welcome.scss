@@ -14,8 +14,9 @@ header{
   top: 0;
 
   .logo{
-    float: left;
-    margin-left: 80px;
+    position: absolute;
+    left: 80px;
+
     a{
       font-weight: 600;
       color: #616161;
@@ -28,13 +29,12 @@ header{
     }
   }
   nav{
-    margin-right: 48px;
     ul{
-      float: right;
+      position: absolute;
+      right: 80px;
       li{
         list-style: none;
         float: left;
-        padding: 0 32px;
 
         $navButtonVerMargin: $headerHeight * 0.2 - 2px;
         a{
@@ -61,7 +61,7 @@ $biggerScreenWidth: 1920px;
 
 $sliderHeight: 600px;
 $sliderHeightOnBiggerScreen: 720px;
-$signupButton: 18px;
+$signupButton: 24px;
 
 $whoWeAreTitle: 32px;
 $whoWeAreContent: 16px;
@@ -135,7 +135,7 @@ $partnerSubtitle: 20px;
         margin: 0 4px;
         text-indent: -999em;
         border: 2px solid #fff;
-        border-radius: 6px;
+        border-radius: 50%;
         cursor: pointer;
         opacity: .4;
         box-sizing: border-box;
@@ -149,36 +149,24 @@ $partnerSubtitle: 20px;
     }
   }
 
-  .signup_button {
-    width: 15.8%;
-    left: 42.1%;
-    bottom: 25.5%;
+  .signup_wrapper {
     position: absolute;
+    bottom: 25%;
+    width: 100%;
+  }
+  .signup_button {
     text-decoration: none;
-    display: block;
+    display: inline-block;
 
     > div {
       background-color: $buttonColor;
       border: 2px solid $buttonColor;
       font-size: $signupButton;
 
-      @media only screen and (max-width: 600px) {
-        font-size: 12px;
-      }
-      @media only screen and (max-width: 980px) {
-        font-size: 15px;
-      }
-      @media only screen and (max-width: 1440px) {
-        font-size: 18px;
-      }
-      @media only screen and (min-width: 1440px) {
-        font-size: 21.6px;
-      }
-
       color: white;
       font-family: Heiti, '黑体';
       text-align: center;
-      padding: 0.6em 0;
+      padding: 0.6em 2.5em;
 
       &:hover {
         background-color: transparent;
@@ -399,6 +387,16 @@ $partnerSubtitle: 20px;
 
           p { margin-bottom: 1em; }
         }
+        @media only screen and (max-width: 1200px), only screen and (max-device-width: 480px) {
+          .map {
+            float: none;
+            margin: 0 auto;
+          }
+          .description {
+            width: auto;
+            float: none;
+          }
+        }
       }
       &.signup {
         > div {
@@ -411,7 +409,7 @@ $partnerSubtitle: 20px;
         }
       }
       &.contact {
-        img { margin: 0 auto; display: block; }
+        img { margin: 0 auto; display: block; max-width: 100%; }
       }
 
       &.one .q-mark { background-color: #d92000; }
@@ -516,7 +514,7 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/organizers.png", 100px, 260px);
-        $list: (0: 0, 1: -260px, 2: -520px);
+        $list: (0: 0, 1: -260px, 2: -540px);
         @include partner-icon-list($list);
       }
     }
@@ -524,7 +522,7 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/media-partners.png", 100px, 240px);
-        $list: (0: 0, 1: -270px, 2: -520px, 3: -800px);
+        $list: (0: 20px, 1: -260px, 2: -520px, 3: -815px);
         @include partner-icon-list($list);
       }
     }
@@ -570,13 +568,9 @@ $partnerSubtitle: 20px;
 @mixin largerFont($size, $mul:1.5) {
   font-size: $size * $mul;
 }
+
+// TODO: use @media instead of controlling size by js
 body.screen_max {
-  .introduction-banner .slider ul li {
-    min-height: $sliderHeight * 1.2;
-  }
-  .introduction-banner .signup_button > div {
-    @include largerFont($signupButton, 1.2);
-  }
   .who-we-are .abstract {
     .title { @include largerFont($whoWeAreTitle); }
     p { @include largerFont($whoWeAreContent); }
@@ -621,5 +615,88 @@ body.screen_max {
       @include largerFont($partnerSponsorContent);
     }
     .subtitle { @include largerFont($partnerSubtitle, 1.35); }
+  }
+}
+
+// Responsive design
+@media (max-width: 1280px) {
+  .introduction-banner .signup_button > div {
+    font-size: 18px;
+  }
+}
+@media (max-width: 960px) {
+  .introduction-banner .signup_button > div {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .introduction-banner .signup_button > div {
+    font-size: 12px;
+    padding: 0.4em 2.5em;
+  }
+  #partners .category .content {
+    width: auto;
+  }
+}
+@media (max-width: 480px) {
+  header .logo {
+    left: 20px;
+  }
+  header nav ul {
+    right: 20px;
+  }
+  .introduction-banner .signup_wrapper {
+    bottom: 24%;
+  }
+  .introduction-banner .signup_button > div {
+    font-size: 8px;
+    line-height: 8px;
+  }
+  .introduction-banner .slider .dots {
+    bottom: 6px;
+    height: 12px;
+
+    li {
+      width: 6px;
+      height: 6px;
+      margin: 0 2px;
+    }
+  }
+
+  .who-we-are .abstract {
+    .title { font-size: 24px; }
+    p { font-size: 14px; }
+  }
+  #open-source .open-source-content .open-source-project-progress .project-item {
+    height: 120px;
+    h3 {
+      font-size: 16px;
+    }
+    h6 {
+      margin: 20px 0 24px;
+      font-size: 14px;
+    }
+  }
+
+  #faq .tabs .tab {
+    font-size: 12px;
+  }
+  #faq .contents .q-item .question {
+    font-size: 14px;
+  }
+  #faq .contents .q-item .answer {
+    font-size: 12px;
+  }
+
+  #partners .category .subtitle, #partners .category.sponsor .content {
+    font-size: 16px;
+
+    span {
+      display: block;
+      margin-bottom: 1em;
+    }
+  }
+  #partners .category img.logo {
+    max-width: 100%;
   }
 }

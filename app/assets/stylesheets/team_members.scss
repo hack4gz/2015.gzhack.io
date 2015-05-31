@@ -2,11 +2,11 @@
   list-style-type: none;
   width: 784px;
   margin: auto;
+  text-align: center;
 
   li.item {
+    display: inline-block;
     position: relative;
-    float: left;
-    margin-right: 8px;
     margin-bottom: 8px;
 
     $lastAvatar: 27;
@@ -104,4 +104,10 @@
 
 .members-clearfix {
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 784px), only screen and (max-device-width: 480px) {
+  #members-list {
+    width: auto;
+  }
 }
