@@ -136,7 +136,7 @@
 </section>
 
 <section id="partners">
-  <div class="category sponsor">
+  <div class="category hoster">
     <div class="subtitle">主办方</div>
     <div class="content">
       <span>广州大学城管理委员会</span>
@@ -149,12 +149,10 @@
       <%= partner_members(@organizers) %>
     </div>
   </div>
-  <div class="category">
+  <div class="category sponsor">
     <div class="subtitle">赞助商</div>
     <div class="content">
-      <a href="http://www.nscc-gz.cn/?from=gzhack" target="_blank">
-        <%= image_tag "partners/chaosuan.jpg", class: "logo" %>
-      </a>
+      <%= partner_members(@sponsors) %>
     </div>
   </div>
   <div class="category media">

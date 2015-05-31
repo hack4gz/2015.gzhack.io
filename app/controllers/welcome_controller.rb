@@ -9,7 +9,8 @@ class WelcomeController < ApplicationController
       { link: "http://segmentfault.com/", name: "SegmentFault" },
       { link: "http://www.huodongxing.com/", name: "活动行" },
       { link: "http://www.ngocn.net/", name: "公益服务网 | NGO 发展交流网" },
-      { anchor: "moge", name: "魔格工作室" }
+      { anchor: "moge", name: "魔格工作室" },
+      { link: "http://technode.com/", name: "TechNode" }
     ]
     @dataSources = [
       { link: "http://air.epmap.org/", name: "上海青悦" },
@@ -29,6 +30,10 @@ class WelcomeController < ApplicationController
       { link: "http://ss.sysu.edu.cn/", name: "中山大学学生软件技术发展中心" },
       { link: "http://100steps.net/", name: "华工百步梯" },
       { anchor: "jnu", name: "暨南大学政务数据开放与社会创新创业研究中心" }
+    ]
+    @sponsors = [
+      { link: "http://www.nscc-gz.cn/", name: "国家超级计算广州中心" },
+      { link: "https://bearychat.com/", name: "BearyChat" }
     ]
   end
 end
