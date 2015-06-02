@@ -99,7 +99,8 @@ $(document).ready () ->
   swiper = new Swiper('.swiper-container',
     pagination: '.swiper-pagination'
     paginationClickable: true,
-    autoplay: 3000,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
     loop: true
   )
 
