@@ -84,7 +84,7 @@ $qMark: 30px;
 $qQuestion: 20px;
 $qAnswer: 16px;
 
-$partnerSponsorContent: 20px;
+$partnerHosterContent: 20px;
 $partnerSubtitle: 20px;
 
 // swiper
@@ -482,11 +482,19 @@ $partnerSubtitle: 20px;
       text-align: center;
     }
 
-    &.sponsor {
+    &.hoster {
       .content {
-        font-size: $partnerSponsorContent;
+        font-size: $partnerHosterContent;
         text-align: center;
         margin-top: 0.7em;
+      }
+    }
+    &.sponsor {
+      @include partner-inner-content();
+      .partner {
+        @include partner-section("partners/sponsors.png", 100px, 430px);
+        $list: (0: 0, 1: -430px);
+        @include partner-icon-list($list);
       }
     }
     &.organizer {
@@ -501,7 +509,7 @@ $partnerSubtitle: 20px;
       @include partner-inner-content();
       .partner {
         @include partner-section("partners/media-partners.png", 100px, 240px);
-        $list: (0: 20px, 1: -260px, 2: -520px, 3: -815px);
+        $list: (0: 20px, 1: -260px, 2: -520px, 3: -815px, 4: -1100px);
         @include partner-icon-list($list);
       }
     }
@@ -590,8 +598,8 @@ body.screen_max {
     }
   }
   #partners {
-    .category.sponsor .content {
-      @include largerFont($partnerSponsorContent);
+    .category.hoster .content {
+      @include largerFont($partnerHosterContent);
     }
     .subtitle { @include largerFont($partnerSubtitle, 1.35); }
   }
