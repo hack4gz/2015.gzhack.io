@@ -9,7 +9,7 @@
     position: relative;
     margin-bottom: 8px;
 
-    $lastAvatar: 28;
+    $lastAvatar: 29;
     @for $i from 2 through $lastAvatar {
       &:nth-child(#{$i}) {
         .background-renderer {
