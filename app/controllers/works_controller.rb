@@ -9,7 +9,7 @@ class WorksController < ApplicationController
     @work = Work.new work_params
     if @work.save
       flash[:success] = "您的作品已经成功提交，感谢您的配合！"
-      redirect_to new_work_path
+      redirect_to root_path
     else
       flash[:alert] = "作品提交失败，原因：#{@work.errors.full_messages.join(',')}"
       render 'new'
