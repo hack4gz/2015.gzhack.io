@@ -202,3 +202,10 @@ zh-CN:
       long: "%Y年%b%d日 %H:%M"
       short: "%b%d日 %H:%M"
     pm: 下午
+  activerecord:
+    attributes:
+      work:
+        team: 队伍名称
+        title: 作品名称
+        introduction: 作品介绍
+        attachments: 文档附件
