@@ -203,6 +203,9 @@ zh-CN:
       short: "%b%d日 %H:%M"
     pm: 下午
   activerecord:
+    models:
+      work: 作品
+      admin_user: 管理员
     attributes:
       work:
         team: 队伍名称

@@ -18,6 +18,9 @@ zh-CN:
       timeout: "您已登录超时，请重新登录。"
       unauthenticated: "继续操作前请注册或者登录。"
       unconfirmed: "继续操作前请先确认您的帐号。"
+      admin_user:
+        unauthenticated: 未验证，请重试登录
+        signed_in: 管理员账号已登录
     mailer:
       confirmation_instructions:
         subject: "确认信息"
