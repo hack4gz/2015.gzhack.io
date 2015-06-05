@@ -19,8 +19,10 @@
       </div>
 
       <div class="form-group">
-        <div><%= f.label :attachments, "* 文档附件" %></div>
-        <div><%= f.file_field :attachments, multiple: true, required: true %></div>
+        <div><%= f.label :attachments, raw("* 文档附件<br />（不超过 #{Work::LIMIT_FILE_SIZE_IN_HUMAN_MEGABYTES}MB）") %></div>
+        <div>
+          <%= f.file_field :attachments, multiple: true, required: true, data: { max_file_size: 10.megabytes } %>
+        </div>
       </div>
 
       <div class="form-group">
