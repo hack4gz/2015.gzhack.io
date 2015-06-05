@@ -684,3 +684,22 @@ body.screen_max {
     max-width: 100%;
   }
 }
+
+.submit {
+  margin-left: 10px;
+}
+
+#flash-messages {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  padding: 20px;
+  background: rgba(55, 172, 115, 0.8);
+  z-index: 12;
+  color: white;
+
+  &.alert {
+    background: rgba(212, 63, 58, 0.8);
+  }
+}

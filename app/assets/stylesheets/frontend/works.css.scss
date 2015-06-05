@@ -1,0 +1,90 @@
+#submit-work {
+  margin-top: 60px;
+  padding: 30px;
+
+  h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .work-form-container {
+    text-align: center;
+
+    margin-top: 30px;
+  }
+
+  .form-group {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    & > div {
+      float: left;
+      box-sizing: border-box;
+
+      &:first-child {
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+      }
+
+      &:last-child {
+        width: 80%;
+      }
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 5px;
+      width: 100%;
+    }
+
+    input.submit {
+      width: 100px;
+      padding: 10px;
+    }
+
+    .button {
+      padding: 5px;
+      border: 0;
+      color: white;
+      width: 116px;
+      font-size: 16px;
+      margin-right: 7px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.submit {
+        border: 2px solid #37ac73;
+        background: #37ac73;
+
+        &:hover {
+          color: #37ac73;
+          background: white;
+        }
+      }
+
+      &.reset {
+        border: 2px solid #d43f3a;
+        background: #d43f3a;
+
+        &:hover {
+          background: white;
+          color: #d43f3a;
+        }
+      }
+    }
+  }
+}

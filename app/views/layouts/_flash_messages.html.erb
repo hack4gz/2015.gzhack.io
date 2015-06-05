@@ -1,0 +1,9 @@
+<% if flash.any? %>
+  <div id="flash-messages" class="<%= flash.keys.try(:first) %>">
+    <% flash.each do |type, message| %>
+      <div class="<%= type %>">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

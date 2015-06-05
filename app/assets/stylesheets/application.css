@@ -11,6 +11,6 @@
  * file per style scope.
  *
  *= require swiper
- *= require_tree .
+ *= require_tree ./frontend
  *= require_self
  */
