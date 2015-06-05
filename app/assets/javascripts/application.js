@@ -14,4 +14,4 @@
 //= require jquery_ujs
 // require turbolinks
 //= require swiper
-//= require_tree .
+//= require_tree ./frontend
