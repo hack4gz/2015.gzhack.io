@@ -5,17 +5,17 @@
     <%= form_for :work do |f| %>
       <div class="form-group">
         <div><%= f.label :team, "队伍名称" %></div>
-        <div><%= f.text_field :team, placeholder: "请输入队伍名称" %></div>
+        <div><%= f.text_field :team, placeholder: "请输入队伍名称", required: true %></div>
       </div>
 
       <div class="form-group">
         <div><%= f.label :title, "作品名称" %></div>
-        <div><%= f.text_field :title, placeholder: "请输入参赛作品名称" %></div>
+        <div><%= f.text_field :title, placeholder: "请输入参赛作品名称", required: true %></div>
       </div>
 
       <div class="form-group">
         <div><%= f.label :introduction, "作品简介" %></div>
-        <div><%= f.text_area :introduction, placeholder: "请向我们介绍您们的作品，比如作品所解决的问题、解决的方式以及其可预期的价值等", rows: '5' %></div>
+        <div><%= f.text_area :introduction, placeholder: "请向我们介绍您们的作品，比如作品所解决的问题、解决的方式以及其可预期的价值等", rows: '5', required: true %></div>
       </div>
 
       <div class="form-group">
