@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150605150254) do
     t.string   "team"
     t.string   "title"
     t.text     "introduction"
+    t.text     "attachments"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

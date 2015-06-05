@@ -4,6 +4,7 @@ class CreateWorks < ActiveRecord::Migration
       t.string :team
       t.string :title
       t.text :introduction
+      t.text :attachments
 
       t.timestamps null: false
     end
