@@ -2,7 +2,7 @@
   <h1>作品提交</h1>
 
   <div class="work-form-container">
-    <%= form_for :work do |f| %>
+    <%= form_for @work do |f| %>
       <div class="form-group">
         <div><%= f.label :team, "* 队伍名称" %></div>
         <div><%= f.text_field :team, placeholder: "请输入队伍名称", required: true %></div>
