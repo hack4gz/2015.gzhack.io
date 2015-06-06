@@ -18,6 +18,7 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:team, :title, :introduction, attachments:[])
+    #params.require(:work).permit(:team, :title, :introduction, attachments:[])
+    params.require(:work).permit(:team, :team_members, :title, :introduction)
   end
 end

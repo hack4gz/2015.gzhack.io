@@ -36,7 +36,7 @@ zh-CN:
       long: "%Y年%b%d日"
       short: "%b%d日"
     month_names:
-    - 
+    -
     - 一月
     - 二月
     - 三月
@@ -209,6 +209,7 @@ zh-CN:
     attributes:
       work:
         team: 队伍名称
+        team_members: 成员姓名
         title: 作品名称
         introduction: 作品介绍
         attachments: 文档附件

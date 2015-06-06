@@ -3,6 +3,7 @@ ActiveAdmin.register Work do
     selectable_column
     column :id
     column :team
+    column :team_members
     column :title
     column :introduction
     column "文档附件" do |work|

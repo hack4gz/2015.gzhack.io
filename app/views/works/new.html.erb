@@ -1,11 +1,16 @@
 <div id="submit-work">
-  <h1>作品提交</h1>
+  <h1>队伍报名</h1>
 
   <div class="work-form-container">
     <%= form_for @work do |f| %>
       <div class="form-group">
         <div><%= f.label :team, "* 队伍名称" %></div>
         <div><%= f.text_field :team, placeholder: "请输入队伍名称", required: true %></div>
+      </div>
+
+      <div class="form-group">
+        <div><%= f.label :team_members, "* 成员姓名" %></div>
+        <div><%= f.text_field :team_members, placeholder: "请输入队伍成员姓名，以逗号隔开", required: true %></div>
       </div>
 
       <div class="form-group">
@@ -18,12 +23,12 @@
         <div><%= f.text_area :introduction, placeholder: "请向我们介绍您们的作品，比如作品所解决的问题、解决的方式以及其可预期的价值等", rows: '5', required: true %></div>
       </div>
 
-      <div class="form-group">
+      <!--<div class="form-group">
         <div><%= f.label :attachments, raw("* 文档附件<br />（不超过 #{Work::LIMIT_FILE_SIZE_IN_HUMAN_MEGABYTES}MB）") %></div>
         <div>
           <%= f.file_field :attachments, multiple: true, required: true, data: { max_file_size: 10.megabytes } %>
         </div>
-      </div>
+      </div>-->
 
       <div class="form-group">
         <%= f.button "提交", type: :submit, data: {confirm: "确认提交？", disable_with: "正在提交中"}, class: 'button submit' %>

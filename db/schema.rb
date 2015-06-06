@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150605175724) do
 
   create_table "works", force: :cascade do |t|
     t.string   "team"
+    t.string   "team_members"
     t.string   "title"
     t.text     "introduction"
     t.text     "attachments"
