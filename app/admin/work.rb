@@ -24,7 +24,7 @@ ActiveAdmin.register Work do
       f.input :team
       f.input :team_members
       f.input :title
-      f.input :introduction, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20, :maxlength => 10  }
+      f.input :introduction, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20 }
     end
 
     f.actions
