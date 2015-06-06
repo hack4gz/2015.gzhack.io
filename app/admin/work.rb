@@ -1,4 +1,5 @@
 ActiveAdmin.register Work do
+  permit_params :team, :team_members, :title, :introduction
   index do
     selectable_column
     column :id
@@ -16,5 +17,16 @@ ActiveAdmin.register Work do
     column :created_at
 
     actions
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :team
+      f.input :team_members
+      f.input :title
+      f.input :introduction, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20, :maxlength => 10  }
+    end
+
+    f.actions
   end
 end
