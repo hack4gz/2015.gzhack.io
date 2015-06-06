@@ -60,18 +60,26 @@ module WelcomeHelper
   #   </li>
   # </ul>
   #
-  def partner_members(member_list)
-    li_list = member_list.map.with_index do |member, index|
-      content_tag :li, class: "partner partner-#{index}" do
-        if member[:link]
-          link_to "", "#{member[:link]}?from=gzhack", target: "_blank"
-        else
-          link_to "", "##{member[:anchor]}"
-        end
+  def partner_members(member_list, start, ending)
+    partner_list = []
+    for index in start...ending do
+      member = member_list[index]
+      puts index
+
+      inner_content = if member[:link]
+        link_to "", "#{member[:link]}?from=gzhack", target: "_blank"
+      else
+        link_to "", "javascript:void(0)"
       end
+
+      item = content_tag :li, class: "partner partner-#{index}" do
+        inner_content
+      end
+      partner_list << item
     end
+
     content_tag :ul do
-      raw li_list.join("")
+      raw partner_list.join("")
     end
   end
 end

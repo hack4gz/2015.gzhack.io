@@ -84,7 +84,7 @@ $qMark: 30px;
 $qQuestion: 20px;
 $qAnswer: 16px;
 
-$partnerHosterContent: 20px;
+$partnerTextContent: 18px;
 $partnerSubtitle: 20px;
 
 // swiper
@@ -432,23 +432,9 @@ $partnerSubtitle: 20px;
   }
 }
 
-@mixin partner-section($imageUrl, $h, $w) {
-  background-image: image-url($imageUrl);
-  background-repeat: no-repeat;
-  display: inline-block;
+@mixin partner-section($h: 100px, $w: 200px) {
   height: $h;
   width: $w;
-}
-@mixin partner-inner-content() {
-  .content-inner {
-    text-align: center;
-    a { display: inline-block; }
-  }
-}
-@mixin partner-icon-list($list, $y: 0) {
-  @each $index, $x in $list {
-    &.partner-#{$index} { background-position: $x $y; }
-  }
 }
 
 #partners{
@@ -482,64 +468,49 @@ $partnerSubtitle: 20px;
       text-align: center;
     }
 
-    &.hoster {
-      .content {
-        font-size: $partnerHosterContent;
+    // common partner style
+    .partner {
+      background-image: image-url("partners/partners.png");
+      background-repeat: no-repeat;
+      display: inline-block;
+      margin: 0 10px;
+      @include partner-section();
+    }
+    @for $i from 0 through 4 {
+      .partner-#{$i} { background-position: -200px * $i 0; }
+    }
+
+    .partner-4 { width: 400px; }
+
+    @for $i from 5 through 28 {
+      .partner-#{$i} { background-position: -200px * ($i + 1) 0; }
+    }
+
+    &.hoster, &.guidance {
+      .content p {
+        font-size: $partnerTextContent;
         text-align: center;
         margin-top: 0.7em;
+        font-weight: bolder;
       }
     }
-    &.sponsor {
-      @include partner-inner-content();
-      .partner {
-        @include partner-section("partners/sponsors.png", 100px, 430px);
-        $list: (0: 0, 1: -430px);
-        @include partner-icon-list($list);
-      }
-    }
-    &.organizer {
-      @include partner-inner-content();
-      .partner {
-        @include partner-section("partners/organizers.png", 100px, 260px);
-        $list: (0: 0, 1: -260px, 2: -540px);
-        @include partner-icon-list($list);
-      }
-    }
-    &.media {
-      @include partner-inner-content();
-      .partner {
-        @include partner-section("partners/media-partners.png", 100px, 240px);
-        $list: (0: 20px, 1: -260px, 2: -520px, 3: -815px, 4: -1100px);
-        @include partner-icon-list($list);
-      }
-    }
+    &.organizer,
+    &.sponsor,
+    &.media,
     &.open-data {
-      @include partner-inner-content();
-      .partner {
-        @include partner-section("partners/data-partners.png", 100px, 280px);
-        $list: (0: 0, 1: -280px);
-        @include partner-icon-list($list);
+      .content-inner {
+        text-align: center;
+        a { display: inline-block; }
       }
     }
-
     &.community {
       .partner {
-        @include partner-section("partners/community-partners.png", 120px, 190px);
-
         box-sizing: border-box;
         padding-left: 20px;
         padding-right: 20px;
 
         &.first { padding-left: 0; }
         &.last { padding-right: 0; }
-
-        $list: (0: 0, 1: -225px, 2: -440px, 3: -665px,
-                4: -880px, 5: -1090px, 6: -1310px, 7: -1520px);
-        @include partner-icon-list($list);
-
-        $list: (8: 0, 9: -215px, 10: -440px, 11: -650px, 12: -880px);
-        $backgroundPositionY: -130px;
-        @include partner-icon-list($list, $backgroundPositionY);
       }
     }
   }
@@ -599,7 +570,7 @@ body.screen_max {
   }
   #partners {
     .category.hoster .content {
-      @include largerFont($partnerHosterContent);
+      @include largerFont($partnerTextContent);
     }
     .subtitle { @include largerFont($partnerSubtitle, 1.35); }
   }

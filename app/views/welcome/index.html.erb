@@ -127,41 +127,47 @@
 </section>
 
 <section id="partners">
-  <div class="category hoster">
-    <div class="subtitle">主办方</div>
+  <div class="category guidance">
+    <div class="subtitle">指导单位</div>
     <div class="content">
-      <span>广州大学城管理委员会</span>
-      <span>广州创客马拉松组委会</span>
+      <p>广州市番禺区人民政府</p>
+    </div>
+  </div>
+  <div class="category hoster">
+    <div class="subtitle">主办单位</div>
+    <div class="content">
+      <p>广州市番禺区科技工业商务和信息化局</p>
+      <p>广州市大学城管理委员会</p>
     </div>
   </div>
   <div class="category organizer">
-    <div class="subtitle">承办方</div>
+    <div class="subtitle">承办单位</div>
     <div class="content">
-      <%= partner_members(@organizers) %>
+      <%= partner_members(@partners, 0, 4) %>
     </div>
   </div>
   <div class="category sponsor">
     <div class="subtitle">赞助商</div>
     <div class="content">
-      <%= partner_members(@sponsors) %>
+      <%= partner_members(@partners, 4, 6) %>
     </div>
   </div>
   <div class="category media">
     <div class="subtitle">媒体合作伙伴</div>
     <div class="content">
-      <%= partner_members(@medias) %>
+      <%= partner_members(@partners, 6, 12) %>
     </div>
   </div>
   <div class="category open-data">
     <div class="subtitle">开放数据合作伙伴</div>
     <div class="content">
-      <%= partner_members(@dataSources) %>
+      <%= partner_members(@partners, 12, 15) %>
     </div>
   </div>
   <div class="category community">
     <div class="subtitle">社区合作伙伴</div>
     <div class="content">
-      <%= partner_members(@communities) %>
+      <%= partner_members(@partners, 15, 29) %>
     </div>
   </div>
   <div class="clearfix"></div>
