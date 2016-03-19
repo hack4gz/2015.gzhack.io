@@ -32,7 +32,8 @@ gem "autoprefixer-rails"
 
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
-gem 'activeadmin', github: 'activeadmin'
+#gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 gem 'devise', '~> 3.5.1'
 
