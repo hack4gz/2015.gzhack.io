@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'gzhack-site'
-set :repo_url, 'git@github.com:gzhack/gzhack-site.git'
+set :application, '2015.gzhack.io'
+set :repo_url, 'git@github.com:hack4gz/2015.gzhack.io.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "~/gzhack-site"
+set :deploy_to, "~/2015.gzhack.io"
 
 # Default value for :scm is :git
 # set :scm, :git

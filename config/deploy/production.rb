@@ -1,1 +1,1 @@
-role :web, %w{gzhack_site@138.128.202.21}, port: 26165
+role :web, %w{deploy@107.191.60.89}
