@@ -64,7 +64,7 @@ module WelcomeHelper
     partner_list = []
     for index in start...ending do
       member = member_list[index]
-      puts index
+      #puts index
 
       inner_content = if member[:link]
         link_to "", "#{member[:link]}?from=gzhack", target: "_blank"
