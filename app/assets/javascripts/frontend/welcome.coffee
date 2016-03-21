@@ -96,15 +96,15 @@ $(document).ready () ->
 
   # Slider
 
-  swiper = new Swiper('.swiper-container',
-    pagination: '.swiper-pagination'
-    paginationClickable: true,
-    autoplay: 3000,
-    autoplayDisableOnInteraction: false,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    loop: true
-  )
+  #swiper = new Swiper('.swiper-container',
+  #  pagination: '.swiper-pagination'
+  #  paginationClickable: true,
+  #  autoplay: 3000,
+  #  autoplayDisableOnInteraction: false,
+  #  nextButton: '.swiper-button-next',
+  #  prevButton: '.swiper-button-prev',
+  #  loop: true
+  #)
 
   if window.chrome
     $('.swiper-slide').css('background-size', '100% 100%')
