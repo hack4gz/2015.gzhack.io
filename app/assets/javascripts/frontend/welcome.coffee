@@ -61,8 +61,8 @@ fetchIssues = ->
       },
       {
         category: "开源组织"
-        url: "http://github.com/gzhack"
-        name: "GZHACK repos"
+        url: "http://github.com/hack4gz"
+        name: "Hack4GZ repos"
       }
     ]
     if count < 4
